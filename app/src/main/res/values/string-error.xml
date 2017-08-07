@@ -1,0 +1,38 @@
+<resources>
+    <!-- standart error string -->
+    <string name="error">Ошибка</string>
+    <string name="error_server">Произошла ошибка сервера, попробуйте позднее</string>
+    <string name="error_network">Произошла ошибка сети, пожалуйста, попробуйте позднее</string>
+    <string name="error_common">Произошла общая ошибка</string>
+    <string name="error_incorrect_email">Введеный e-mail не корректен</string>
+    <string name="error_incorrect_phone_number">Некорректный номер телефона</string>
+    <string name="error_upload_image">Извините, произошла ошибка при загрузке изображения</string>
+    <string name="error_dont_have_needed_app">Извините, у вас не установлено подходящего приложения для открытия ссылки</string>
+    <string name="error_dont_have_call_app">Извините, у вас не установлено приложение для звонков</string>
+    <string name="error_internet">Не удалось подключиться к серверу. Проверьте соединение с интернетом или повторите попытку позже.</string>
+    <string name="error_token_expired">Сессия на устройстве истекла. Необходимо пройти авторизацию заново</string>
+    <string name="error_api">Извините, произошла ошибка сервера</string>
+    <string name="error_api_with_description">Извините, произошла ошибка сервера: %s</string>
+    <string name="error_server_timeout">Система на данный момент недоступна. Попробуйте войти позднее</string>
+    <!-- standart error string -->
+
+    <!-- permission denied -->
+    <string name="error_permission_deny">Доступ запрещен</string>
+    <string name="error_permission_call">Приложению запрещенно выполнять звонки</string>
+    <string name="error_permission_contacts">Доступ к списку контактов запрещен</string>
+    <string name="error_permission_camera">Невозможно будет добавить повреждение без прикрепленной фотографии</string>
+    <string name="error_permission_storage">Использование памяти телефона запрещено</string>
+    <string name="error_permission_micro">Запись аудио запрещена</string>
+    <string name="error_permission_calendar">Извините, но вы запретили использование календаря</string>
+    <!-- permission denied -->
+
+    <string name="error_select_car_type">Выберите класс автомобиля</string>
+    <string name="error_not_navigation_installed">У вас не установленно ни одного приложени, известного нам, для построения маршрута</string>
+    <string name="error_not_found_destination">Не указанны координаты пункта назначения</string>
+    <string name="error_camera_problem">Не удалось получить изображение с камеры</string>
+    <string name="error_empty_tariff">Необходимо выбрать время аренды</string>
+    <string name="error_not_money">Недостаточно средств</string>
+    <string name="error_max_photo_count">Извините, но для одного повреждения можно добавить только %d изображений</string>
+
+    <string name="error_operation_filter_empty">Выберите хотябы один пункт</string>
+</resources>
