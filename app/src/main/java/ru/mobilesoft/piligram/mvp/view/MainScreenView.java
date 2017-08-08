@@ -9,6 +9,21 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
 public interface MainScreenView extends BaseView {
 
-    @StateStrategyType(SkipStrategy.class)
+    //@StateStrategyType(SkipStrategy.class)
     void showSearchForm();
+
+    /**
+     * показать Закладки
+     */
+    void showFavoriteForm();
+
+    /**
+     * показать мои сообщения
+     */
+    void showMyMessage();
+
+    /**
+     * показать мои путеществия
+     */
+    void showMyTravels();
 }

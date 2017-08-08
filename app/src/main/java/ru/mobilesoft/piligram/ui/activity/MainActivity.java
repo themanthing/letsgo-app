@@ -11,6 +11,9 @@ import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.MainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.MainScreenView;
+import ru.mobilesoft.piligram.ui.fragments.FavoriteFragment;
+import ru.mobilesoft.piligram.ui.fragments.MyMessagesFragment;
+import ru.mobilesoft.piligram.ui.fragments.MyTravelsFragment;
 import ru.mobilesoft.piligram.ui.fragments.SearchFragment;
 
 public class MainActivity extends BaseActivity implements MainScreenView {
@@ -34,11 +37,14 @@ public class MainActivity extends BaseActivity implements MainScreenView {
                 case R.id.navigation_travels:
                     presenter.showTravelsView();
                     return true;
-               /* case R.id.navigation_profile:
+                case R.id.navigation_profile:
                     presenter.showProfile();
-                    return true;*/
+                    return true;
                 case R.id.navigation_favorite:
                     presenter.showFavorite();
+                    return true;
+                case R.id.navigation_messages:
+                    presenter.showMyMessages();
                     return true;
             }
             return false;
@@ -55,11 +61,25 @@ public class MainActivity extends BaseActivity implements MainScreenView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     }
 
     @Override
     public void showSearchForm() {
         push(new SearchFragment(), false, false);
+    }
+
+    @Override
+    public void showFavoriteForm() {
+        push(new FavoriteFragment(), false, false);
+    }
+
+    @Override
+    public void showMyMessage() {
+        push(new MyMessagesFragment(), false, false);
+    }
+
+    @Override
+    public void showMyTravels() {
+        push(new MyTravelsFragment(), false, false);
     }
 }

@@ -30,7 +30,7 @@ public class MainScreenPresenter extends BasePresenter<MainScreenView> {
      * путешесвтия
      */
     public void showTravelsView() {
-
+        getViewState().showMyTravels();
     }
 
     /**
@@ -44,6 +44,13 @@ public class MainScreenPresenter extends BasePresenter<MainScreenView> {
      * закладки/избранное
      */
     public void showFavorite() {
+        getViewState().showFavoriteForm();
+    }
 
+    /**
+     * показать мои сообщения
+     */
+    public void showMyMessages() {
+        getViewState().showMyMessage();
     }
 }
