@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Piligram</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Поиск</string>
+    <string name="title_favorites">Закладки</string>
+    <string name="title_travels">Путешествия</string>
+    <string name="title_messages">Сообщения</string>
+    <string name="title_profile">Профиль</string>
     <string name="message_please_wait">Пожалуйста, подождите…</string>
     <string name="ok" translatable="false">Ok</string>
+    <string name="all">Все</string>
+    <string name="people">Люди</string>
 </resources>

@@ -1,10 +1,14 @@
 package ru.mobilesoft.piligram.mvp.view;
 
+import com.arellomobile.mvp.viewstate.strategy.SkipStrategy;
+import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
+
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  */
 
 public interface MainScreenView extends BaseView {
 
-
+    @StateStrategyType(SkipStrategy.class)
+    void showSearchForm();
 }
