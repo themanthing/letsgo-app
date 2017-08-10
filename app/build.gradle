@@ -111,4 +111,6 @@ dependencies {
     // камера
     compile 'io.fotoapparat.fotoapparat:library:1.2.0'
 
+    // буфер событий
+    compile 'org.greenrobot:eventbus:3.0.0'
 }
