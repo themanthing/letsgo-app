@@ -14,6 +14,7 @@ import ru.mobilesoft.piligram.ui.fragments.registration.EnterEmailFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterNameFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterPasswordFragment;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
+import su.ias.components.views.LockedViewPager;
 
 /**
  * Created on 8/14/17.
@@ -25,7 +26,7 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
     RegistrationPresenter presenter;
 
     @BindView(R.id.vp_wizard)
-    ViewPager viewPager;
+    LockedViewPager viewPager;
 
     BaseFragmentPagerAdapter adapter;
 
@@ -44,6 +45,18 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
         adapter.addItem(new EnterBirthdayFragment());
         adapter.addItem(new EnterAvaterFragment());
         viewPager.setAdapter(adapter);
+        viewPager.setSwipeDisabled(true);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        if (viewPager.getCurrentItem() == 0) {
+            super.onBackPressed();
+        }else{
+            viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
+        }
     }
 }

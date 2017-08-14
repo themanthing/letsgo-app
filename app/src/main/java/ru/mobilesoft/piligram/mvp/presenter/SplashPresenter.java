@@ -19,6 +19,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
             // мы авторизовались ранее, надо подкачать все что нужно и топать на главный экран
         } else {
             // нужна авторизация
+            getViewState().showButtons();
 
         }
     }
