@@ -18,7 +18,7 @@ import ru.mobilesoft.piligram.mvp.view.BaseView;
 import ru.mobilesoft.piligram.ui.dialogs.DialogFactory;
 
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  */
 
 public abstract class BaseActivity extends MvpAppCompatActivity implements BaseView {

@@ -2,17 +2,20 @@ package ru.mobilesoft.piligram.model;
 
 import android.content.Context;
 
+import ru.mobilesoft.piligram.repositrory.preference.PreferenceImpl;
+import ru.mobilesoft.piligram.repositrory.preference.PreferenceInterface;
+
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  */
 
 public class ApiImpl implements Api {
 
     private static Api api;
-    //private PreferenceInterface preference;
+    private PreferenceInterface preference;
 
     private ApiImpl(Context context) {
-        //this.preference = new PreferenceImpl(context);
+        this.preference = new PreferenceImpl(context);
         //this.http = RetrofitApi.getServerApi();
         //this.db = new DatabaseApiImpl();
     }
@@ -24,5 +27,10 @@ public class ApiImpl implements Api {
 
     public static Api getInstance() {
         return api;
+    }
+
+    @Override
+    public boolean isAuth() {
+        return preference.isAuth();
     }
 }

@@ -1,6 +1,7 @@
 package ru.mobilesoft.piligram.repositrory.preference;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.securepreferences.SecurePreferences;
@@ -16,6 +17,7 @@ public class PreferenceImpl implements PreferenceInterface {
     private static final String IS_FIRST_LOAD = "fL";
     private static final String TOKEN = "id";
     private static final String MSISDN = "msisdn";
+    private static final String REFRESH_TOKEN = "rId";
 
     private final SecurePreferences preferences;
 
@@ -69,4 +71,22 @@ public class PreferenceImpl implements PreferenceInterface {
         preferences.edit().remove(IS_FIRST_LOAD).apply();
     }
 
+    @Override
+    public String getRefreshToken() {
+        return preferences.getString(REFRESH_TOKEN, null);
+    }
+
+    @Override
+    public void setRefreshToken(@NonNull String refreshToken) {
+        if (TextUtils.isEmpty(refreshToken)) {
+            preferences.edit().remove(REFRESH_TOKEN).apply();
+        } else {
+            preferences.edit().putString(REFRESH_TOKEN, refreshToken).apply();
+        }
+    }
+
+    @Override
+    public boolean isAuth() {
+        return !TextUtils.isEmpty(getToken()) && !TextUtils.isEmpty(getRefreshToken());
+    }
 }

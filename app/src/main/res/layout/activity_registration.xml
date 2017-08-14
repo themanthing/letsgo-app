@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#d8d8d8">
+
+        <View
+            android:layout_width="20dp"
+            android:background="#4990e2"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_wizard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

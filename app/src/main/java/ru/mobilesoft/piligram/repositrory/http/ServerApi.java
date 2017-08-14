@@ -1,12 +1,13 @@
 package ru.mobilesoft.piligram.repositrory.http;
 
+import retrofit2.http.POST;
+
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  * retrofit server API
  */
 
 public interface ServerApi {
-
 
 
 }

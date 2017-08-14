@@ -11,10 +11,11 @@ import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.MainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.MainScreenView;
-import ru.mobilesoft.piligram.ui.fragments.FavoriteFragment;
-import ru.mobilesoft.piligram.ui.fragments.MyMessagesFragment;
-import ru.mobilesoft.piligram.ui.fragments.MyTravelsFragment;
-import ru.mobilesoft.piligram.ui.fragments.SearchFragment;
+import ru.mobilesoft.piligram.ui.fragments.main.FavoriteFragment;
+import ru.mobilesoft.piligram.ui.fragments.main.MyMessagesFragment;
+import ru.mobilesoft.piligram.ui.fragments.main.MyTravelsFragment;
+import ru.mobilesoft.piligram.ui.fragments.main.SearchFragment;
+
 
 public class MainActivity extends BaseActivity implements MainScreenView {
 

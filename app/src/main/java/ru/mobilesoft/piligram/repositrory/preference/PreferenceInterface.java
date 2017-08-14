@@ -1,5 +1,8 @@
 package ru.mobilesoft.piligram.repositrory.preference;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 /**
  * Createdв on 27.01.17.
  * Интрефейс работы с преференсами
@@ -19,6 +22,7 @@ public interface PreferenceInterface {
      *
      * @return токен
      */
+    @Nullable
     String getToken();
 
     /**
@@ -26,11 +30,12 @@ public interface PreferenceInterface {
      *
      * @param token - токен
      */
-    void setToken(String token);
+    void setToken(@NonNull String token);
 
     /**
      * Получить номер телефона
      */
+    @Nullable
     String getMsisdn();
 
     /**
@@ -43,4 +48,24 @@ public interface PreferenceInterface {
      */
     void clear();
 
+    /**
+     * получить RefreshToken
+     *
+     * @return refreshToken
+     */
+    @Nullable
+    String getRefreshToken();
+
+    /**
+     * сохранить refreshToken
+     *
+     * @param refreshToken -токен
+     */
+    void setRefreshToken(@NonNull String refreshToken);
+
+    /**
+     * проверит авторизовывались ли мы ранее
+     * @return true если была авторизация ранее
+     */
+    boolean isAuth();
 }

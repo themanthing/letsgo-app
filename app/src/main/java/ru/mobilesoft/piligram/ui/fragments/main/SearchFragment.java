@@ -1,4 +1,4 @@
-package ru.mobilesoft.piligram.ui.fragments;
+package ru.mobilesoft.piligram.ui.fragments.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +18,7 @@ import ru.mobilesoft.piligram.events.MessageEvent;
 import ru.mobilesoft.piligram.mvp.presenter.SearchMainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.SearchMainScreenView;
 import ru.mobilesoft.piligram.ui.adapters.SearchScreenPagerAdapter;
+import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
 import ru.mobilesoft.piligram.utils.Constants;
 import timber.log.Timber;
 

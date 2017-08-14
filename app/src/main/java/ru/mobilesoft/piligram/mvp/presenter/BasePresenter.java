@@ -11,7 +11,7 @@ import ru.mobilesoft.piligram.model.Api;
 import ru.mobilesoft.piligram.model.ApiImpl;
 
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  */
 
 public abstract class BasePresenter<V extends MvpView> extends MvpPresenter<V> {

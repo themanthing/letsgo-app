@@ -10,4 +10,11 @@
     <string name="all">Все</string>
     <string name="people">Люди</string>
     <string name="my_travels">Мои путешествия</string>
+    <string name="splash_welcome_text">Поможет вам быстро найти компанию для путешествия</string>
+    <string name="use_facebook">Использовать Facebook</string>
+    <string name="btn_enter">Войти</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="enter_your_name">Как вас зовут?</string>
+    <string name="reg_hint_your_name">Если вы укажете реальные данные, это вызовет больше доверия у других путешественников и вам будет проще найти компанию</string>
+    <string name="reg_name_hint">ИМЯ</string>
 </resources>

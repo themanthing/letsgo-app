@@ -1,4 +1,4 @@
-package ru.mobilesoft.piligram.ui.fragments;
+package ru.mobilesoft.piligram.ui.fragments.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,7 @@ import org.greenrobot.eventbus.EventBus;
 import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.events.MessageEvent;
+import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
 import ru.mobilesoft.piligram.utils.Constants;
 
 /**

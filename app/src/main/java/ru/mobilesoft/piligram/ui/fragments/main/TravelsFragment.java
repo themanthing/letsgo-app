@@ -1,6 +1,7 @@
-package ru.mobilesoft.piligram.ui.fragments;
+package ru.mobilesoft.piligram.ui.fragments.main;
 
 import ru.mobilesoft.piligram.R;
+import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
 
 /**
  * Created on 8/8/17.
