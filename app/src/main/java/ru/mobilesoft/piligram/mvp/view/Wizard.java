@@ -1,5 +1,7 @@
 package ru.mobilesoft.piligram.mvp.view;
 
+import android.support.annotation.Nullable;
+
 /**
  * Created on 15.08.17.
  */
@@ -23,6 +25,13 @@ public interface Wizard {
      * @param key ключ
      * @return значение
      */
+    @Nullable
     Object getValue(String key);
 
+    /**
+     * проверка наличия ключа
+     * @param name имя ключа
+     * @return true если есть
+     */
+    boolean containsKey(String name);
 }

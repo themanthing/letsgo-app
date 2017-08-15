@@ -16,4 +16,14 @@ public class EnterBirthdayFragment extends BaseWizardFragment {
     protected boolean validate() {
         return false;
     }
+
+    @Override
+    protected void saveValue() {
+
+    }
+
+    @Override
+    protected void loadValue() {
+
+    }
 }

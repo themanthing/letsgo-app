@@ -68,11 +68,16 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
 
     @Override
     public void setValue(String key, Object value) {
-
+        presenter.setValue(key, value);
     }
 
     @Override
     public Object getValue(String key) {
-        return null;
+        return presenter.getValue(key);
+    }
+
+    @Override
+    public boolean containsKey(String name) {
+        return presenter.containsKey(name);
     }
 }

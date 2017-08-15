@@ -10,16 +10,14 @@ import ru.mobilesoft.piligram.mvp.view.RegistrationView;
  * Created on 8/14/17.
  */
 @InjectViewState
-public class RegistrationPresenter extends BasePresenter<RegistrationView> {
+public class RegistrationPresenter extends BaseWizardPresenter<RegistrationView> {
 
-    private HashMap<String, Object> wizardParam = new HashMap<>();
+
 
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
         getViewState().initViewPager();
     }
-
-
 
 }

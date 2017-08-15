@@ -18,6 +18,8 @@ import ru.mobilesoft.piligram.utils.ValidateUtils;
 
 public class EnterEmailFragment extends BaseWizardFragment {
 
+    private static final String KEY = "email";
+
     @BindView(R.id.ed_email)
     EditText edEmail;
 
@@ -44,5 +46,17 @@ public class EnterEmailFragment extends BaseWizardFragment {
     @Override
     protected boolean validate() {
         return ValidateUtils.validateEmail(edEmail.getText());
+    }
+
+    @Override
+    protected void saveValue() {
+        wizard.setValue(KEY, edEmail.getText().toString());
+    }
+
+    @Override
+    protected void loadValue() {
+        if (wizard.containsKey(KEY)){
+            edEmail.setText(String.valueOf(wizard.getValue(KEY)));
+        }
     }
 }

@@ -16,4 +16,14 @@ public class EnterAvatarFragment extends BaseWizardFragment {
     protected boolean validate() {
         return true;
     }
+
+    @Override
+    protected void saveValue() {
+
+    }
+
+    @Override
+    protected void loadValue() {
+
+    }
 }

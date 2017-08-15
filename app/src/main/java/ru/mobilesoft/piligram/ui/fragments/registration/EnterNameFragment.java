@@ -18,6 +18,9 @@ import ru.mobilesoft.piligram.utils.SimpleTextWatcher;
 
 public class EnterNameFragment extends BaseWizardFragment {
 
+    private static final String KEY_NAME = "name";
+    private static final String KEY_PARENT_NAME = "parentName";
+
     @BindView(R.id.ed_name)
     EditText edName;
 
@@ -51,6 +54,22 @@ public class EnterNameFragment extends BaseWizardFragment {
 
             edName.addTextChangedListener(watcher);
             edParentName.addTextChangedListener(watcher);
+        }
+    }
+
+    @Override
+    protected void saveValue() {
+        wizard.setValue(KEY_NAME, edName.getText().toString());
+        wizard.setValue(KEY_PARENT_NAME, edName.getText().toString());
+    }
+
+    @Override
+    protected void loadValue() {
+        if (wizard.containsKey(KEY_NAME)) {
+            edName.setText(String.valueOf(wizard.getValue(KEY_NAME)));
+        }
+        if (wizard.containsKey(KEY_PARENT_NAME)) {
+            edParentName.setText(String.valueOf(wizard.getValue(KEY_PARENT_NAME)));
         }
     }
 }
