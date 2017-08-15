@@ -80,6 +80,7 @@ dependencies {
     // rxJava
     compile "io.reactivex.rxjava2:rxandroid:$RxJavaVersion"
     compile "io.reactivex.rxjava2:rxjava:$RxJavaVersion"
+    //compile "com.jakewharton.rxbinding2:rxbinding:2.0.0"
 
     // маски ввода
     compile 'com.redmadrobot:inputmask:2.3.0'

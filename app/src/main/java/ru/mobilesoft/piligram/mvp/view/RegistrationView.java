@@ -5,8 +5,10 @@ package ru.mobilesoft.piligram.mvp.view;
  */
 
 public interface RegistrationView extends BaseView {
+
     /**
      * инициализация VP и адаптера
      */
     void initViewPager();
+
 }

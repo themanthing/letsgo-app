@@ -6,9 +6,14 @@ import ru.mobilesoft.piligram.R;
  * Created on 8/14/17.
  */
 
-public class EnterAvaterFragment extends BaseWizardFragment {
+public class EnterAvatarFragment extends BaseWizardFragment {
     @Override
     protected int getLayout() {
         return R.layout.fragment_reg_avatar;
+    }
+
+    @Override
+    protected boolean validate() {
+        return true;
     }
 }

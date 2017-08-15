@@ -11,4 +11,9 @@ public class EnterBirthdayFragment extends BaseWizardFragment {
     protected int getLayout() {
         return R.layout.fragment_reg_birthday;
     }
+
+    @Override
+    protected boolean validate() {
+        return false;
+    }
 }

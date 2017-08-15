@@ -16,7 +16,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/btn_action">
 
         <TextView
             android:text="@string/enter_your_name"
@@ -24,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textColor="#4a4a4a"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_marginBottom="45dp"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -47,6 +49,7 @@
                 android:id="@+id/ed_parent_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/reg_parent_hint"
                 />
 
         </android.support.design.widget.TextInputLayout>
@@ -64,7 +67,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_action"
         style="@style/BlueButton"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"

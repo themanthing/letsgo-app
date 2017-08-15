@@ -6,7 +6,7 @@ import ru.mobilesoft.piligram.model.ApiImpl;
 import timber.log.Timber;
 
 /**
- * Created by toni on 8/7/17.
+ * Created on 8/7/17.
  */
 public class PiligramApp extends Application {
 

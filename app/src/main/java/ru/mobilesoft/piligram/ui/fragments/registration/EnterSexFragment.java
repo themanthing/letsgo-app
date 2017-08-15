@@ -11,4 +11,9 @@ public class EnterSexFragment extends BaseWizardFragment {
     protected int getLayout() {
         return R.layout.fragment_reg_sex;
     }
+
+    @Override
+    protected boolean validate() {
+        return false;
+    }
 }

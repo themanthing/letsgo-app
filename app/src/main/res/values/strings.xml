@@ -17,4 +17,8 @@
     <string name="enter_your_name">Как вас зовут?</string>
     <string name="reg_hint_your_name">Если вы укажете реальные данные, это вызовет больше доверия у других путешественников и вам будет проще найти компанию</string>
     <string name="reg_name_hint">ИМЯ</string>
+    <string name="next">Далее</string>
+    <string name="reg_email_hint">ЭЛЕКТРОННАЯ ПОЧТА</string>
+    <string name="enter_email_address">Введите адрес вашей электронной почты</string>
+    <string name="reg_parent_hint">ФАМИЛИЯ</string>
 </resources>
