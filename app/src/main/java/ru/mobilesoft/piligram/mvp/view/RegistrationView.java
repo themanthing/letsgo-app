@@ -11,4 +11,8 @@ public interface RegistrationView extends BaseView {
      */
     void initViewPager();
 
+    /**
+     * покажем успех (а это просто последний экран)
+     */
+    void showSuccessScreen();
 }

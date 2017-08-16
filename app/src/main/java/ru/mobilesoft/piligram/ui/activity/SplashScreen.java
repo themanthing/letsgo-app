@@ -32,6 +32,9 @@ public class SplashScreen extends BaseActivity implements SplashView {
     @BindView(R.id.btn_enter)
     View btnEnter;
 
+    @BindView(R.id.welcome_layout)
+    ViewGroup welcomeLayout;
+
     @Override
     protected int getLayout() {
         return R.layout.activity_splash;
@@ -69,7 +72,6 @@ public class SplashScreen extends BaseActivity implements SplashView {
 
     @Override
     public void showButtons() {
-        //TODO анимация повяления
         new Handler().postDelayed(() -> {
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.custom_slide_in_bottom);
             animation.setDuration(500);
@@ -80,7 +82,9 @@ public class SplashScreen extends BaseActivity implements SplashView {
             animation.setDuration(500);
             btnEnter.setVisibility(View.VISIBLE);
             btnEnter.startAnimation(animation);
-            //buttonsLayout.startAnimation(animation);
+
+            welcomeLayout.animate().translationY(-220).setDuration(500).start();
+
         }, 2000);
 
     }

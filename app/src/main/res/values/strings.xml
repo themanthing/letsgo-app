@@ -35,4 +35,12 @@
     <string name="login_title">Войти</string>
     <string name="remember_password">Забыли пароль?</string>
     <string name="done">Готово</string>
+    <!-- selimg -->
+    <string name="select_from_gallery">Выбрать из галереи</string>
+    <string name="select_from_camera">Сфотографировать</string>
+    <string name="chooser_select_picture">Выберите приложение</string>
+    <string name="continue_caps">ПРОДОЛЖИТЬ</string>
+    <string name="skip_caps">ПРОПУСТИТЬ</string>
+    <string name="reg_finish_message">Чтобы другие путешественники\nуже могли предложить вам компанию,\nрасскажите им, когда вы хотели бы\nпоехать в путешествие\n\nЭто могут быть не точные даты,\nа только ваши планы</string>
+
 </resources>

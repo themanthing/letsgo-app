@@ -24,6 +24,7 @@
     <string name="error_permission_storage">Использование памяти телефона запрещено</string>
     <string name="error_permission_micro">Запись аудио запрещена</string>
     <string name="error_permission_calendar">Извините, но вы запретили использование календаря</string>
+    <string name="permission_rationale_write_external_storage">Вы запретили приложению использовать важные разрешения, фотография не получится ;(</string>
     <!-- permission denied -->
 
     <string name="error_select_car_type">Выберите класс автомобиля</string>

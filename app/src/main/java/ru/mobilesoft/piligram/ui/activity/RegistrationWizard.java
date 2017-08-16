@@ -13,6 +13,7 @@ import ru.mobilesoft.piligram.ui.fragments.registration.EnterEmailFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterNameFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterPasswordFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterSexFragment;
+import ru.mobilesoft.piligram.ui.fragments.registration.FinishRegistrationFragment;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import su.ias.components.views.LockedViewPager;
 
@@ -44,6 +45,8 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
         adapter.addItem(new EnterBirthdayFragment());
         adapter.addItem(new EnterSexFragment());
         adapter.addItem(new EnterAvatarFragment());
+        // покажем что все ок, после регистарции
+        adapter.addItem(new FinishRegistrationFragment());
         viewPager.setAdapter(adapter);
         viewPager.setSwipeDisabled(true);
 
@@ -60,9 +63,17 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
 
     @Override
     public void showNextStep() {
-        if (viewPager.getAdapter().getCount() != viewPager.getCurrentItem()) {
+        if (viewPager.getAdapter().getCount() != viewPager.getCurrentItem() -1 ) {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+        }else{
+            // все данные подготовленны пора на сервер отправлять
+            presenter.register();
         }
+    }
+
+    @Override
+    public void showSuccessScreen() {
+        viewPager.setCurrentItem(viewPager.getAdapter().getCount(), true);
     }
 
     @Override

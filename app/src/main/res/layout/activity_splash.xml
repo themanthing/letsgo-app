@@ -19,11 +19,11 @@
         android:paddingBottom="12dp"/>
 
     <LinearLayout
+        android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_above="@+id/buttons"
         android:layout_centerInParent="true">
 
         <FrameLayout
@@ -32,8 +32,8 @@
             android:layout_marginBottom="18.6dp">
 
             <ImageView
-                android:layout_width="66dp"
-                android:layout_height="52.4dp" />
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height" />
 
             <ImageView
                 android:layout_width="62dp"

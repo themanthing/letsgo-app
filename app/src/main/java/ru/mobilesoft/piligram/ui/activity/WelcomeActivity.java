@@ -4,6 +4,7 @@ import ru.mobilesoft.piligram.R;
 
 /**
  * Created on 8/16/17.
+ * Показывает приветствие и синхронизирует данные
  */
 
 public class WelcomeActivity extends BaseActivity {
