@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
+        style="@style/WizardContent"
         android:layout_below="@id/toolbar"
         android:layout_above="@+id/btn_action">
 

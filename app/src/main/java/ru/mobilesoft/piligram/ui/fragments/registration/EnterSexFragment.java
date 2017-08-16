@@ -14,7 +14,7 @@ public class EnterSexFragment extends BaseWizardFragment {
 
     @Override
     protected boolean validate() {
-        return false;
+        return true;
     }
 
     @Override

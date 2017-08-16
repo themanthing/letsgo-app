@@ -21,4 +21,17 @@
     <string name="reg_email_hint">ЭЛЕКТРОННАЯ ПОЧТА</string>
     <string name="enter_email_address">Введите адрес вашей электронной почты</string>
     <string name="reg_parent_hint">ФАМИЛИЯ</string>
+    <string name="enter_reg_password">Придумайте пароль</string>
+    <string name="reg_hint_password">ПАРОЛЬ</string>
+    <string name="reg_password_message">Придумайте сложный пароль - это поможет защитить ваш аккаунт</string>
+    <string name="reg_birthday_message">Мы не публикуем дату рождения. Другие пользователи смогут видеть только ваш возраст.</string>
+    <string name="enter_your_birthday">Введите дату вашего рождения</string>
+    <string name="reg_birthday_hit">ДАТА РОЖДЕНИЯ</string>
+    <string name="enter_your_sex">Укажите ваш пол</string>
+    <string name="female_caps">ЖЕНЩИНА</string>
+    <string name="male_caps">МУЖЧИНА</string>
+    <string name="reg_avatar_message">Добавьте ваше любимое фото из путешествия или другую фотографию</string>
+    <string name="enter_reg_avatar">Добавьте ваше фото</string>
+    <string name="login_title">Войти</string>
+    <string name="remember_password">Забыли пароль?</string>
 </resources>

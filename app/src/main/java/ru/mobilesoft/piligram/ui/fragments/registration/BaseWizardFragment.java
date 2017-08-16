@@ -43,6 +43,7 @@ public abstract class BaseWizardFragment extends BaseFragment {
         loadValue();
 
         if (actionButton != null) {
+            actionButton.setEnabled(false);
             actionButton.setText(R.string.next);
             actionButton.setOnClickListener(v -> {
                 if (validate()){
