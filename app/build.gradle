@@ -121,11 +121,17 @@ dependencies {
     compile 'com.github.rubensousa:gravitysnaphelper:1.1'
 
     // камера
-    compile 'io.fotoapparat.fotoapparat:library:1.2.0'
+    //compile 'io.fotoapparat.fotoapparat:library:1.2.0'
 
     // буфер событий
     compile 'org.greenrobot:eventbus:3.0.0'
 
     // выбор фото
-    compile 'su.ias.components:selimg:1.0.0'
+    compile 'su.ias.components:selimg:1.0.2'
+
+    //fb api
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+
+    // vk api
+    compile 'com.vk:androidsdk:1.6.7'
 }

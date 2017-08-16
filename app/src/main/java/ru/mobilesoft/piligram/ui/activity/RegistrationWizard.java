@@ -28,8 +28,6 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
     @BindView(R.id.vp_wizard)
     LockedViewPager viewPager;
 
-    BaseFragmentPagerAdapter adapter;
-
     @Override
     protected int getLayout() {
         return R.layout.activity_registration;
@@ -38,8 +36,8 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
     @Override
     public void initViewPager() {
 
-        adapter = new BaseFragmentPagerAdapter(getSupportFragmentManager());
-        adapter.addItem(new EnterAvatarFragment());
+        BaseFragmentPagerAdapter adapter =
+                new BaseFragmentPagerAdapter(getSupportFragmentManager());
         adapter.addItem(new EnterNameFragment());
         adapter.addItem(new EnterEmailFragment());
         adapter.addItem(new EnterPasswordFragment());
