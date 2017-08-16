@@ -34,4 +34,5 @@
     <string name="enter_reg_avatar">Добавьте ваше фото</string>
     <string name="login_title">Войти</string>
     <string name="remember_password">Забыли пароль?</string>
+    <string name="done">Готово</string>
 </resources>

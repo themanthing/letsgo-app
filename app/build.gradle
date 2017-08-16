@@ -125,4 +125,7 @@ dependencies {
 
     // буфер событий
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    // выбор фото
+    compile 'su.ias.components:selimg:1.0.0'
 }

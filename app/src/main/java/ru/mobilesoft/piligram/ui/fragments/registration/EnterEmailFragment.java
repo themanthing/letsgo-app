@@ -2,6 +2,7 @@ package ru.mobilesoft.piligram.ui.fragments.registration;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -23,6 +24,9 @@ public class EnterEmailFragment extends BaseWizardFragment {
     @BindView(R.id.ed_email)
     EditText edEmail;
 
+    @BindView(R.id.ti_email)
+    TextInputLayout emailLayout;
+
     @Override
     protected int getLayout() {
         return R.layout.fragment_reg_email;
@@ -37,6 +41,7 @@ public class EnterEmailFragment extends BaseWizardFragment {
                 @Override
                 public void afterTextChanged(Editable editable) {
                     actionButton.setEnabled(editable.length() > 3);
+                    emailLayout.setErrorEnabled(false);
                 }
             };
             edEmail.addTextChangedListener(watcher);
@@ -45,7 +50,12 @@ public class EnterEmailFragment extends BaseWizardFragment {
 
     @Override
     protected boolean validate() {
-        return ValidateUtils.validateEmail(edEmail.getText());
+        boolean valid = ValidateUtils.validateEmail(edEmail.getText());
+        if (!valid){
+            emailLayout.setError(getString(R.string.error_incorrect_email));
+            emailLayout.setErrorEnabled(true);
+        }
+        return valid;
     }
 
     @Override

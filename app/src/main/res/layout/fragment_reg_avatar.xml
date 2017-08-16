@@ -29,6 +29,7 @@
             android:layout_marginBottom="115dp"/>
 
         <FrameLayout
+            android:id="@+id/select_avatar"
             android:layout_width="180dp"
             android:layout_height="240dp"
             android:layout_centerInParent="true"

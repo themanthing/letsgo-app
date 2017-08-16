@@ -1,5 +1,6 @@
 package ru.mobilesoft.piligram.ui.dialogs;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,6 +14,8 @@ import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.Window;
 import android.view.WindowManager;
+
+import java.util.Date;
 
 import ru.mobilesoft.piligram.R;
 
@@ -108,7 +111,8 @@ public final class DialogFactory {
         if (!TextUtils.isEmpty(message)) {
             progressDialog.setMessage(message);
         } else {
-            progressDialog.setMessage(context.getResources().getString(R.string.message_please_wait));
+            progressDialog.setMessage(context.getResources()
+                                              .getString(R.string.message_please_wait));
         }
         progressDialog.show();
         return progressDialog;
@@ -157,4 +161,17 @@ public final class DialogFactory {
         };
     }
 
+    public static DatePickerDialog createDatePicker(Context context,
+                                        DatePickerDialog.OnDateSetListener listener,
+                                        Date minDate,
+                                        Date maxDate) {
+        DatePickerDialog dialog = new DatePickerDialog(context, listener, 1979, 1, 1);
+        if (minDate != null){
+            dialog.getDatePicker().setMinDate(minDate.getTime());
+        }
+        if (maxDate != null){
+            dialog.getDatePicker().setMaxDate(maxDate.getTime());
+        }
+        return dialog;
+    }
 }

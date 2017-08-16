@@ -29,14 +29,15 @@
             android:layout_marginBottom="115dp"/>
 
 
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="vertical"
             android:paddingTop="20dp">
 
-            <TextView
+            <RadioButton
                 android:id="@+id/female"
                 style="@style/CheckButton"
                 android:layout_width="match_parent"
@@ -44,14 +45,14 @@
                 android:text="@string/female_caps"
                 android:layout_marginBottom="20dp"/>
 
-            <TextView
+            <RadioButton
                 android:id="@+id/male"
                 style="@style/CheckButton"
                 android:text="@string/male_caps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-        </LinearLayout>
+        </RadioGroup>
 
 
 

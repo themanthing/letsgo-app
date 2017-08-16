@@ -39,6 +39,7 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
     public void initViewPager() {
 
         adapter = new BaseFragmentPagerAdapter(getSupportFragmentManager());
+        adapter.addItem(new EnterAvatarFragment());
         adapter.addItem(new EnterNameFragment());
         adapter.addItem(new EnterEmailFragment());
         adapter.addItem(new EnterPasswordFragment());
