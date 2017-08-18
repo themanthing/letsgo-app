@@ -5,12 +5,10 @@ import android.content.Context;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Completable;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
+import io.reactivex.CompletableObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
-import ru.mobilesoft.piligram.model.response.TokenResponse;
+import ru.mobilesoft.piligram.repositrory.cache.CacheRepository;
 import ru.mobilesoft.piligram.repositrory.http.RetrofitApi;
 import ru.mobilesoft.piligram.repositrory.http.ServerApi;
 import ru.mobilesoft.piligram.repositrory.preference.PreferenceImpl;
@@ -25,17 +23,18 @@ public class ApiImpl implements Api {
     private static Api api;
     private PreferenceInterface preference;
     private ServerApi http;
+    private CacheRepository cache;
 
     private ApiImpl(Context context) {
         this.preference = new PreferenceImpl(context);
         this.http = RetrofitApi.getServerApi();
+        this.cache = CacheRepository.getInstance();
         //this.db = new DatabaseApiImpl();
     }
 
     public static void init(Context context) {
         api = new ApiImpl(context);
     }
-
 
     public static Api getInstance() {
         return api;
@@ -62,15 +61,24 @@ public class ApiImpl implements Api {
         AuthRequest authRequest = new AuthRequest(userName, password);
         authRequest.setClientId("android");
         authRequest.setClientPassword("SomeRandomCharsAndNumbers");
-        return Completable.fromObservable(http.singIn(authRequest).flatMap(new Function<TokenResponse, ObservableSource<Void>>() {
-            @Override
-            public ObservableSource<Void> apply(TokenResponse tokenResponse) throws Exception {
 
-                return Observable.empty();
-            }
-        })
-                                                  .observeOn(AndroidSchedulers.mainThread())
-                                                  .delaySubscription(400, TimeUnit.MILLISECONDS,
-                                                                     AndroidSchedulers.mainThread()));
+        return http.singIn(authRequest)
+                .delay(1, TimeUnit.SECONDS)
+                .flatMapCompletable(tokenResponse -> {
+                    preference.setToken(tokenResponse.getAccessToken());
+                    preference.setRefreshToken(tokenResponse.getRefreshToken());
+                    return getMe();
+                })
+                .observeOn(AndroidSchedulers.mainThread());
     }
+
+    @Override
+    public Completable getMe() {
+        return http.getMy().flatMapCompletable(people -> {
+            cache.setMe(people);
+            return CompletableObserver::onComplete;
+        });
+    }
+
+
 }

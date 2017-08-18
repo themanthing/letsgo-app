@@ -9,4 +9,8 @@ public interface LoginView  extends BaseView {
     void showEmailValidationError();
 
     void showPasswordError();
+
+    void showSuccess();
+
+    void showAuthError();
 }

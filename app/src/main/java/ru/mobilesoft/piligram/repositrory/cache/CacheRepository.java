@@ -1,11 +1,14 @@
 package ru.mobilesoft.piligram.repositrory.cache;
 
+import ru.mobilesoft.piligram.model.response.People;
+
 /**
  * Репозиторий для хранения данных в RAM (не должны сохраняться при перезапуске приложения)
  */
 public class CacheRepository {
     private static volatile CacheRepository instance;
-    private String authLogin;
+
+    private People me;
 
     public static CacheRepository getInstance() {
         if (instance == null) {
@@ -14,17 +17,11 @@ public class CacheRepository {
         return instance;
     }
 
-    public String getAuthLogin() {
-        return authLogin;
+    public People getMe() {
+        return me;
     }
 
-    /**
-     * Временное хранение логина пользователя при процессе авторизации.
-     * Формат: 10 цифр без пробелов и прочих символов
-     *
-     * @param login
-     */
-    public void setAuthLogin(String login) {
-        authLogin = login;
+    public void setMe(People me) {
+        this.me = me;
     }
 }

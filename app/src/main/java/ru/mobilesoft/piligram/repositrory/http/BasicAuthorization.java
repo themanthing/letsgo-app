@@ -10,6 +10,7 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import ru.mobilesoft.piligram.BuildConfig;
+import ru.mobilesoft.piligram.api.ApiImpl;
 
 /**
  * базовая авторизация, наш сервер это как родное считает
@@ -24,9 +25,13 @@ class BasicAuthorization implements Interceptor {
         // вот это еще в заголовок нужно подать "Authorization: Bearer 123456789"
 
         Request original = chain.request();
-        final String basic =
+        String basic =
                 "Basic " + Base64.encodeToString(BuildConfig.AUTH.getBytes(Charset.defaultCharset()),
                                                  Base64.NO_WRAP);
+
+        if (ApiImpl.getInstance().isAuth()){
+            basic = "Bearer " + ApiImpl.getInstance().getToken();
+        }
 
         Request.Builder requestBuilder = original.newBuilder()
                 .header("Authorization", basic)

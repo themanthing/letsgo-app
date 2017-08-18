@@ -20,4 +20,9 @@ public interface SplashView extends BaseView {
      * показат кнопки
      */
     void showButtons();
+
+    /**
+     * показывает приветствие и загружает остальные данные
+     */
+    void showWelcome();
 }

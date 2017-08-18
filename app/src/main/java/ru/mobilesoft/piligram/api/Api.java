@@ -2,6 +2,7 @@ package ru.mobilesoft.piligram.api;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import ru.mobilesoft.piligram.model.response.People;
 
 /**
  * Created on 8/7/17.
@@ -29,11 +30,17 @@ public interface Api {
 
     /**
      * Авторизация по логину и паролю
-     * @param userName
-     * @param password
-     * @return
+     * @param userName логин
+     * @param password пароль
+     * @return вернет мои данные, или ошибку
      */
     Completable auth(String userName, String password);
+
+    /**
+     * получить данные по себе
+     * @return
+     */
+    Completable getMe();
 
 
 

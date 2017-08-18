@@ -26,11 +26,12 @@ public class LoginPresenter extends BasePresenter<LoginView> {
             return;
         }
 
+        getViewState().showProgress();
         addDisposable(getApi().auth(email, password).subscribe(() -> {
-
+            getViewState().showSuccess();
         }, throwable -> {
             getViewState().hideProgress();
-
+            getViewState().showAuthError();
         }));
 
     }

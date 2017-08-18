@@ -54,6 +54,13 @@ public interface ServerApi {
     Observable<TokenResponse> singIn(@Body AuthRequest request);
 
     /**
+     * получить информацию по себе
+     * @return вернет мои данные
+     */
+    @GET("/api/people/me")
+    Observable<People> getMy();
+
+    /**
      * Отправка файла на сервер
      */
     @POST("/api/images")

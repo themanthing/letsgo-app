@@ -103,7 +103,7 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$ButterKnifeVersion"
 
     // нужно поддержать старичков и поэтому будем использовать такой вот прогресс бар
-    compile 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+    // compile 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 
     // circular image view
     compile 'de.hdodenhof:circleimageview:2.1.0'

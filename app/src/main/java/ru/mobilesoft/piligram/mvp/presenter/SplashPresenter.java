@@ -17,6 +17,19 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
         if (getApi().isAuth()) {
             // мы авторизовались ранее, надо подкачать все что нужно и топать на главный экран
+
+            // надо запросить инфу по себе и продолжить
+            addDisposable(getApi().getMe().subscribe(() -> {
+                // а тут мы проходим дальше
+
+                getViewState().showWelcome();
+
+            }, throwable -> {
+                // если все плохо то надо заново авторизоваться
+                getViewState().showButtons();
+            }));
+
+
         } else {
             // нужна авторизация
             getViewState().showButtons();
