@@ -62,6 +62,12 @@ public abstract class BaseWizardFragment extends BaseFragment {
 
     protected abstract void loadValue();
 
+    protected void setActionButtonEnabled(boolean enabled){
+        if (actionButton != null){
+            actionButton.setEnabled(enabled);
+        }
+    }
+
     @Override
     public void onDetach() {
         wizard = null;

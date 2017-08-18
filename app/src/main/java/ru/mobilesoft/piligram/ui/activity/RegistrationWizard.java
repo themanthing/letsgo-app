@@ -35,7 +35,7 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_registration;
+        return R.layout.activity_wizard;
     }
 
     @Override

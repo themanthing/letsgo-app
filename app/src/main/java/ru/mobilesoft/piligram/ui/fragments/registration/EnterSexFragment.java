@@ -28,9 +28,7 @@ public class EnterSexFragment extends BaseWizardFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            if (actionButton != null) {
-                actionButton.setEnabled(true);
-            }
+            setActionButtonEnabled(true);
         });
     }
 
@@ -52,6 +50,7 @@ public class EnterSexFragment extends BaseWizardFragment {
             }else{
                 radioGroup.check(R.id.male);
             }
+            setActionButtonEnabled(true);
         }
     }
 }
