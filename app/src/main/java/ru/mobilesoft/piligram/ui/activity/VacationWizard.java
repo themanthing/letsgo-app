@@ -4,36 +4,22 @@ import android.support.annotation.Nullable;
 
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.view.Wizard;
+import su.ias.components.adapters.BaseFragmentPagerAdapter;
 
 /**
  * Created on 8/16/17.
  * это тоже простой мастер по созданию отпуска...
  */
 
-public class VacationWizard extends BaseActivity implements Wizard {
+public class VacationWizard extends BaseWizardActivity{
+
     @Override
     public void showNextStep() {
 
     }
 
     @Override
-    public void setValue(String key, Object value) {
-
-    }
-
-    @Nullable
-    @Override
-    public Object getValue(String key) {
+    BaseFragmentPagerAdapter getAdapter() {
         return null;
-    }
-
-    @Override
-    public boolean containsKey(String name) {
-        return false;
-    }
-
-    @Override
-    protected int getLayout() {
-        return R.layout.activity_wizard;
     }
 }

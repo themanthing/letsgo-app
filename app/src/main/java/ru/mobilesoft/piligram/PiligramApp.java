@@ -2,7 +2,7 @@ package ru.mobilesoft.piligram;
 
 import android.app.Application;
 
-import ru.mobilesoft.piligram.model.ApiImpl;
+import ru.mobilesoft.piligram.api.ApiImpl;
 import timber.log.Timber;
 
 /**

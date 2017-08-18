@@ -2,11 +2,13 @@ package ru.mobilesoft.piligram.mvp.view;
 
 import android.support.annotation.Nullable;
 
+import com.arellomobile.mvp.MvpView;
+
 /**
  * Created on 15.08.17.
  */
 
-public interface Wizard {
+public interface Wizard extends MvpView {
 
     /**
      * перейти на следующий этап
@@ -34,4 +36,9 @@ public interface Wizard {
      * @return true если есть
      */
     boolean containsKey(String name);
+
+    /**
+     * инициализация экранов мастера
+     */
+    void initViewPager();
 }

@@ -22,25 +22,13 @@ import su.ias.components.views.LockedViewPager;
  * Created on 8/14/17.
  */
 
-public class RegistrationWizard extends BaseActivity implements RegistrationView, Wizard {
+public class RegistrationWizard extends BaseWizardActivity implements RegistrationView {
 
     @InjectPresenter
     RegistrationPresenter presenter;
 
-    @BindView(R.id.vp_wizard)
-    LockedViewPager viewPager;
-
-    @BindView(R.id.pv_top_progress)
-    TopProgressBar progressBar;
-
     @Override
-    protected int getLayout() {
-        return R.layout.activity_wizard;
-    }
-
-    @Override
-    public void initViewPager() {
-
+    BaseFragmentPagerAdapter getAdapter() {
         BaseFragmentPagerAdapter adapter =
                 new BaseFragmentPagerAdapter(getSupportFragmentManager());
         adapter.addItem(new EnterNameFragment());
@@ -51,18 +39,7 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
         adapter.addItem(new EnterAvatarFragment());
         // покажем что все ок, после регистарции
         adapter.addItem(new FinishRegistrationFragment());
-        viewPager.setAdapter(adapter);
-        viewPager.setSwipeDisabled(true);
-        progressBar.setupFromViewPager(viewPager);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (viewPager.getCurrentItem() == 0) {
-            super.onBackPressed();
-        } else {
-            viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
-        }
+        return adapter;
     }
 
     @Override
@@ -78,20 +55,5 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
     @Override
     public void showSuccessScreen() {
         viewPager.setCurrentItem(viewPager.getAdapter().getCount(), true);
-    }
-
-    @Override
-    public void setValue(String key, Object value) {
-        presenter.setValue(key, value);
-    }
-
-    @Override
-    public Object getValue(String key) {
-        return presenter.getValue(key);
-    }
-
-    @Override
-    public boolean containsKey(String name) {
-        return presenter.containsKey(name);
     }
 }

@@ -7,14 +7,14 @@ import com.arellomobile.mvp.MvpView;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import ru.mobilesoft.piligram.model.Api;
-import ru.mobilesoft.piligram.model.ApiImpl;
+import ru.mobilesoft.piligram.api.Api;
+import ru.mobilesoft.piligram.api.ApiImpl;
 
 /**
  * Created on 8/7/17.
  */
 
-public abstract class BasePresenter<V extends MvpView> extends MvpPresenter<V> {
+abstract class BasePresenter<V extends MvpView> extends MvpPresenter<V> {
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
