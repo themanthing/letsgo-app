@@ -14,6 +14,7 @@ import ru.mobilesoft.piligram.ui.fragments.registration.EnterNameFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterPasswordFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterSexFragment;
 import ru.mobilesoft.piligram.ui.fragments.registration.FinishRegistrationFragment;
+import ru.mobilesoft.piligram.ui.widget.TopProgressBar;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import su.ias.components.views.LockedViewPager;
 
@@ -28,6 +29,9 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
 
     @BindView(R.id.vp_wizard)
     LockedViewPager viewPager;
+
+    @BindView(R.id.pv_top_progress)
+    TopProgressBar progressBar;
 
     @Override
     protected int getLayout() {
@@ -49,7 +53,7 @@ public class RegistrationWizard extends BaseActivity implements RegistrationView
         adapter.addItem(new FinishRegistrationFragment());
         viewPager.setAdapter(adapter);
         viewPager.setSwipeDisabled(true);
-
+        progressBar.setupFromViewPager(viewPager);
     }
 
     @Override

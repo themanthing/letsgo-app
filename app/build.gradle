@@ -29,6 +29,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         buildConfigField "String", "BASE_URL", "\"http://192.168.36.77:1337/\""
         buildConfigField "String", "AUTH", "\"android:SomeRandomCharsAndNumbers\""
+        buildConfigField "String", "VERSION", "\"$version\""
         versionNameSuffix ""
     }
 
@@ -133,5 +134,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.+'
 
     // vk api
-    compile 'com.vk:androidsdk:1.6.7'
+    compile 'com.vk:androidsdk:1.6.8'
 }

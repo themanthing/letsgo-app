@@ -1,5 +1,8 @@
 package ru.mobilesoft.piligram.repositrory.http;
 
+import java.util.Observable;
+
+import io.reactivex.Maybe;
 import retrofit2.http.POST;
 
 /**
@@ -8,6 +11,10 @@ import retrofit2.http.POST;
  */
 
 public interface ServerApi {
+
+    @POST("/api/registration")
+    Maybe<Void> registration();
+
 
 
 }

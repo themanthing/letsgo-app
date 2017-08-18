@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <FrameLayout
+    <ru.mobilesoft.piligram.ui.widget.TopProgressBar
+        android:id="@+id/pv_top_progress"
         android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:background="#d8d8d8">
-
-        <View
-            android:layout_width="20dp"
-            android:background="#4990e2"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
+        android:layout_height="6dp" />
 
     <su.ias.components.views.LockedViewPager
         android:id="@+id/vp_wizard"
