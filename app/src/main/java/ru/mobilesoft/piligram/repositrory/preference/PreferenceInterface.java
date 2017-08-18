@@ -68,4 +68,9 @@ public interface PreferenceInterface {
      * @return true если была авторизация ранее
      */
     boolean isAuth();
+
+    /**
+     * почистим auth_token он устарел
+     */
+    void clearToken();
 }

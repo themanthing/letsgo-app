@@ -1,5 +1,6 @@
 package ru.mobilesoft.piligram.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BaseTransientBottomBar;
 import android.support.design.widget.Snackbar;
@@ -75,8 +76,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     private void checkButtonEnabled() {
-        progressButtonView.setEnabled(!TextUtils.isEmpty(email.getText()) &&
-                                              !TextUtils.isEmpty(password.getText()));
+        progressButtonView.setEnabled(!TextUtils.isEmpty(email.getText()) && !TextUtils.isEmpty(
+                password.getText()));
     }
 
     @OnClick(R.id.btn_action)
@@ -117,11 +118,12 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void showSuccess() {
         hideLockScreen();
-        progressButtonView.showSuccess();
+        startActivity(new Intent(this, WelcomeActivity.class));
     }
 
     @Override
     public void showAuthError() {
-        Snackbar.make(progressButtonView, R.string.error_auth, BaseTransientBottomBar.LENGTH_LONG).show();
+        Snackbar.make(progressButtonView, R.string.error_auth, BaseTransientBottomBar.LENGTH_LONG)
+                .show();
     }
 }

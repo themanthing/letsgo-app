@@ -41,12 +41,12 @@ public class MainActivity extends BaseActivity implements MainScreenView {
                 case R.id.navigation_profile:
                     presenter.showProfile();
                     return true;
-                case R.id.navigation_favorite:
+                /*case R.id.navigation_favorite:
                     presenter.showFavorite();
                     return true;
                 case R.id.navigation_messages:
                     presenter.showMyMessages();
-                    return true;
+                    return true;*/
             }
             return false;
         }

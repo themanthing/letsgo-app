@@ -2,6 +2,8 @@ package ru.mobilesoft.piligram.mvp.presenter;
 
 import com.arellomobile.mvp.InjectViewState;
 
+import retrofit2.HttpException;
+import retrofit2.Response;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
 
 /**
@@ -16,19 +18,16 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         super.onFirstViewAttach();
 
         if (getApi().isAuth()) {
-            // мы авторизовались ранее, надо подкачать все что нужно и топать на главный экран
-
-            // надо запросить инфу по себе и продолжить
-            addDisposable(getApi().getMe().subscribe(() -> {
+            // мы авторизовывались ранее
+            // сразу рефрешим токен) что бы никто кроме нас, мало ли осталось от токена пара секунд,
+            // не хочется постоянно с ним бороться)
+            addDisposable(getApi().refreshToken().subscribe(() -> {
                 // а тут мы проходим дальше
-
                 getViewState().showWelcome();
-
             }, throwable -> {
                 // если все плохо то надо заново авторизоваться
                 getViewState().showButtons();
             }));
-
 
         } else {
             // нужна авторизация

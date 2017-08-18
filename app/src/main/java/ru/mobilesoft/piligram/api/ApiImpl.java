@@ -16,6 +16,10 @@ import ru.mobilesoft.piligram.repositrory.preference.PreferenceInterface;
 
 /**
  * Created on 8/7/17.
+ * TODO поведение системы должно быть таким при получении 401 мы переходим на главный SplashScreen
+ * причем если у нас протух только access_token то его нужно попробовать переполучить через refresh_token
+ * и в случае неудачи только переходить на страницу SpleshScreen причем надо будет делать повтор последнего запроса
+ * т.е. repeat но это пока теория...
  */
 
 public class ApiImpl implements Api {
@@ -80,5 +84,19 @@ public class ApiImpl implements Api {
         });
     }
 
-
+    @Override
+    public Completable refreshToken() {
+        preference.clearToken();
+        AuthRequest authRequest = new AuthRequest(preference.getRefreshToken());
+        authRequest.setClientId("android");
+        authRequest.setClientPassword("SomeRandomCharsAndNumbers");
+        return http.singIn(authRequest)
+                .delay(1, TimeUnit.SECONDS)
+                .flatMapCompletable(tokenResponse -> {
+                    preference.setToken(tokenResponse.getAccessToken());
+                    preference.setRefreshToken(tokenResponse.getRefreshToken());
+                    return getMe();
+                })
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

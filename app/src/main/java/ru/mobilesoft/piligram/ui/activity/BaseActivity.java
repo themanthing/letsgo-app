@@ -133,6 +133,20 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements BaseV
         }
     }
 
+    protected void push(Fragment fragment, boolean addToBackStack, int enter, int exit, int popEnter, int popExit){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        try {
+            transaction.setCustomAnimations(enter, exit, popEnter, popExit);
+            if (addToBackStack) {
+                transaction.addToBackStack(fragment.getClass().getSimpleName());
+            }
+
+            transaction.add(R.id.container, fragment);
+        } finally {
+            transaction.commitAllowingStateLoss();
+        }
+    }
+
     /**
      * очистить back stack
      */

@@ -18,9 +18,10 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.SplashScreen"
+        <activity
+            android:name=".ui.activity.SplashScreen"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -31,16 +32,23 @@
 
         <activity
             android:name=".ui.activity.RegistrationWizard"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name=".ui.activity.VacationWizard"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.VacationWizard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name=".ui.activity.LoginActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".ui.activity.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
 
     </application>
 

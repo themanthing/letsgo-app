@@ -2,11 +2,9 @@ package ru.mobilesoft.piligram.ui.activity;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -16,6 +14,7 @@ import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.SplashPresenter;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
+import timber.log.Timber;
 
 /**
  * Created on 8/7/17.
@@ -41,22 +40,22 @@ public class SplashScreen extends BaseActivity implements SplashView {
     }
 
     @OnClick(R.id.btn_enter)
-    void onEnterButtonClick(){
+    void onEnterButtonClick() {
         presenter.loginButtonClick();
     }
 
     @OnClick(R.id.btn_create_account)
-    void onCreateAccountClick(){
+    void onCreateAccountClick() {
         presenter.startCreateAccount();
     }
 
     @OnClick(R.id.btn_fb_auth)
-    void onFbAuthClick(){
+    void onFbAuthClick() {
 
     }
 
     @OnClick(R.id.btn_vk_auth)
-    void onVkAuthClick(){
+    void onVkAuthClick() {
 
     }
 
@@ -87,5 +86,11 @@ public class SplashScreen extends BaseActivity implements SplashView {
 
         }, 2000);
 
+    }
+
+    @Override
+    public void showWelcome() {
+        Timber.d("успешно прошли авторизацию идем к приветствию");
+        startActivity(new Intent(this, WelcomeActivity.class));
     }
 }

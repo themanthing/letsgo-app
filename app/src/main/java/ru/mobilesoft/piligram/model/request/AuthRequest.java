@@ -33,6 +33,11 @@ public class AuthRequest {
         grandType = "password";
     }
 
+    public AuthRequest(String refreshToken) {
+        this.refreshToken = refreshToken;
+        grandType = "refresh_token";
+    }
+
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }

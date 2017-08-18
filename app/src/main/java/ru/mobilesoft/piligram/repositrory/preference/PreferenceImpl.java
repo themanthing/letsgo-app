@@ -89,4 +89,9 @@ public class PreferenceImpl implements PreferenceInterface {
     public boolean isAuth() {
         return !TextUtils.isEmpty(getToken()) && !TextUtils.isEmpty(getRefreshToken());
     }
+
+    @Override
+    public void clearToken() {
+        preferences.edit().remove(TOKEN).apply();
+    }
 }

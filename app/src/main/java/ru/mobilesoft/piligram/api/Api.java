@@ -37,6 +37,12 @@ public interface Api {
     Completable auth(String userName, String password);
 
     /**
+     * перегенерация токена auth_token при помощи refresh
+     * @return вернет все ок, или ошибку
+     */
+    Completable refreshToken();
+
+    /**
      * получить данные по себе
      * @return
      */
