@@ -15,6 +15,7 @@ import ru.mobilesoft.piligram.utils.ValidateUtils;
 
 /**
  * Created on 8/14/17.
+ * TODO проверить есть ли такой e-mail на сервере! если есть ошибку выдать!
  */
 
 public class EnterEmailFragment extends BaseWizardFragment {
