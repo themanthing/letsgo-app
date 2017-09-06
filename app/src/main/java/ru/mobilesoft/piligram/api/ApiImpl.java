@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
+import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.repositrory.cache.CacheRepository;
 import ru.mobilesoft.piligram.repositrory.http.RetrofitApi;
 import ru.mobilesoft.piligram.repositrory.http.ServerApi;
@@ -71,17 +73,16 @@ public class ApiImpl implements Api {
                 .flatMapCompletable(tokenResponse -> {
                     preference.setToken(tokenResponse.getAccessToken());
                     preference.setRefreshToken(tokenResponse.getRefreshToken());
-                    return getMe();
+                    return CompletableObserver::onComplete;
                 })
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
-    public Completable getMe() {
-        return http.getMy().flatMapCompletable(people -> {
-            cache.setMe(people);
-            return CompletableObserver::onComplete;
-        });
+    public Observable<People> getMe() {
+        return http.getMy()
+                .doOnNext(people -> cache.setMe(people))
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
@@ -95,7 +96,7 @@ public class ApiImpl implements Api {
                 .flatMapCompletable(tokenResponse -> {
                     preference.setToken(tokenResponse.getAccessToken());
                     preference.setRefreshToken(tokenResponse.getRefreshToken());
-                    return getMe();
+                    return CompletableObserver::onComplete;
                 })
                 .observeOn(AndroidSchedulers.mainThread());
     }

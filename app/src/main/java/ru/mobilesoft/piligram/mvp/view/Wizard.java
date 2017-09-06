@@ -8,7 +8,7 @@ import com.arellomobile.mvp.MvpView;
  * Created on 15.08.17.
  */
 
-public interface Wizard extends MvpView {
+public interface Wizard {
 
     /**
      * перейти на следующий этап
@@ -37,8 +37,4 @@ public interface Wizard extends MvpView {
      */
     boolean containsKey(String name);
 
-    /**
-     * инициализация экранов мастера
-     */
-    void initViewPager();
 }

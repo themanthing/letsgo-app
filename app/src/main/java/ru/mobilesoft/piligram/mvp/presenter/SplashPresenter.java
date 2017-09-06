@@ -5,6 +5,7 @@ import com.arellomobile.mvp.InjectViewState;
 import retrofit2.HttpException;
 import retrofit2.Response;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
+import timber.log.Timber;
 
 /**
  * Created on 8/14/17.
@@ -42,5 +43,27 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
     public void loginButtonClick() {
         getViewState().showLoginForm();
+    }
+
+    public void checkUserData() {
+
+        getApi().getMe()
+                .subscribe(me -> {
+            if (me.getVacations() == null || me.getVacations().isEmpty()){
+                // нужно попробоать предложить задать отпуск
+                getViewState().showAddVacation();
+            }else{
+
+
+            }
+        });
+
+    }
+
+    /**
+     * ну наконец-то доберемся до главного экрана
+     */
+    public void skipVacation() {
+        getViewState().showMainScreen();
     }
 }

@@ -44,9 +44,10 @@ public interface Api {
 
     /**
      * получить данные по себе
-     * @return
+     * TODO нужно сразу все данные получать, чего тянуть то
+     * @return вернет все данные обо мне
      */
-    Completable getMe();
+    Observable<People> getMe();
 
 
 

@@ -25,4 +25,14 @@ public interface SplashView extends BaseView {
      * показывает приветствие и загружает остальные данные
      */
     void showWelcome();
+
+    /**
+     * показать сообщения о форме заполения отпуска
+     */
+    void showAddVacation();
+
+    /**
+     * переход на главный экран
+     */
+    void showMainScreen();
 }

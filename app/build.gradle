@@ -27,7 +27,7 @@ android {
         versionCode 1
         versionName "$version"
         vectorDrawables.useSupportLibrary = true
-        buildConfigField "String", "BASE_URL", "\"http://192.168.36.77:1337/\""
+        buildConfigField "String", "BASE_URL", "\"http://192.168.36.129:1337/\""
         buildConfigField "String", "AUTH", "\"android:SomeRandomCharsAndNumbers\""
         buildConfigField "String", "VERSION", "\"$version\""
         versionNameSuffix ""

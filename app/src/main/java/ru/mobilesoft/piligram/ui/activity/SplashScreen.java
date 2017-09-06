@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ProgressBar;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
@@ -14,6 +15,7 @@ import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.SplashPresenter;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
+import su.ias.utils.AnimUtils;
 import timber.log.Timber;
 
 /**
@@ -33,6 +35,12 @@ public class SplashScreen extends BaseActivity implements SplashView {
 
     @BindView(R.id.welcome_layout)
     ViewGroup welcomeLayout;
+
+    @BindView(R.id.pg_loader)
+    ProgressBar loader;
+
+    @BindView(R.id.btn_skip_vacation)
+    View btnSkip;
 
     @Override
     protected int getLayout() {
@@ -57,6 +65,11 @@ public class SplashScreen extends BaseActivity implements SplashView {
     @OnClick(R.id.btn_vk_auth)
     void onVkAuthClick() {
 
+    }
+
+    @OnClick(R.id.btn_skip_vacation)
+    void onVacationSkipClick(){
+        presenter.skipVacation();
     }
 
     @Override
@@ -91,6 +104,19 @@ public class SplashScreen extends BaseActivity implements SplashView {
     @Override
     public void showWelcome() {
         Timber.d("успешно прошли авторизацию идем к приветствию");
-        startActivity(new Intent(this, WelcomeActivity.class));
+        loader.setVisibility(View.VISIBLE);
+        AnimUtils.alpha(loader, 0, 1, 300);
+        presenter.checkUserData();
+    }
+
+    @Override
+    public void showAddVacation() {
+        AnimUtils.crossfade(btnSkip, loader, 400);
+    }
+
+    @Override
+    public void showMainScreen() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

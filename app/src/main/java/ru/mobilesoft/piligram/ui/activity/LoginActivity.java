@@ -118,7 +118,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void showSuccess() {
         hideLockScreen();
-        startActivity(new Intent(this, WelcomeActivity.class));
+        startActivity(new Intent(this, SplashScreen.class));
+        finish();
     }
 
     @Override

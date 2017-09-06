@@ -6,6 +6,7 @@ import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.WizardPresenter;
 import ru.mobilesoft.piligram.mvp.view.Wizard;
+import ru.mobilesoft.piligram.mvp.view.WizardView;
 import ru.mobilesoft.piligram.ui.widget.TopProgressBar;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import su.ias.components.views.LockedViewPager;
@@ -15,7 +16,7 @@ import su.ias.components.views.LockedViewPager;
  * базовый класс визардов)
  */
 
-public abstract class BaseWizardActivity extends BaseActivity implements Wizard {
+public abstract class BaseWizardActivity extends BaseActivity implements Wizard, WizardView {
 
     @InjectPresenter
     WizardPresenter wizardPresenter;
