@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
 
 
@@ -14,7 +15,7 @@
         android:text="@string/skip_caps"
         android:background="?attr/selectableItemBackground"
         android:padding="16dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_alignParentEnd="true"
         />
 
@@ -24,12 +25,13 @@
         android:layout_height="@dimen/logo_height"
         android:layout_above="@+id/textView5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18.5dp" />
+        android:src="@drawable/logo"
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="27dp"
         android:text="@string/app_name"
         android:textColor="#111111"
         android:textSize="48sp"
@@ -44,10 +46,10 @@
         android:textColor="#de000000"
         android:lineSpacingExtra="4sp"
         android:gravity="center_horizontal"
-        tools:text="Спасибо, что вы с нами!"
+        android:text="@string/thanks_with_as"
         android:layout_above="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="21dp"
         android:id="@+id/textView4" />
 
     <TextView
@@ -57,7 +59,7 @@
         android:textColor="#de000000"
         android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
-        tools:text="еще несколько секунд"
+        android:text="@string/a_few_seconds"
         android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
@@ -70,18 +72,19 @@
         android:textColor="#8a000000"
         android:lineSpacingExtra="8sp"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="14dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/btn_continue"
         android:text="@string/reg_finish_message"
         android:id="@+id/textView2" />
 
-    <TextView
+    <Button
         android:id="@+id/btn_continue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/continue_caps"
-        style="@style/BlueBottomButton"/>
+        android:layout_margin="16dp"
+        style="@style/BlueButton"/>
 
 </RelativeLayout>

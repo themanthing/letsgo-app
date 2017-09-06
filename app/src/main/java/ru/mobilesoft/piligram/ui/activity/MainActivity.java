@@ -55,6 +55,7 @@ public class MainActivity extends BaseActivity implements MainScreenView {
 
     @Override
     public void onBackPressed() {
+        //TODO убрать строки в ресурсы
         DialogFactory.showYesNoDialog(this, "Вы действительно хотите выйти?",
                                       "Да", "Нет", (dialog, which) -> {
                     dialog.dismiss();

@@ -43,5 +43,7 @@
     <string name="skip_caps">ПРОПУСТИТЬ</string>
     <string name="reg_finish_message">Чтобы другие путешественники\nуже могли предложить вам компанию,\nрасскажите им, когда вы хотели бы\nпоехать в путешествие\n\nЭто могут быть не точные даты,\nа только ваши планы</string>
     <string name="btn_skip">Пропустить</string>
+    <string name="thanks_with_as">Спасибо, что вы с нами!</string>
+    <string name="a_few_seconds">еще несколько секунд</string>
 
 </resources>

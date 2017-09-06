@@ -15,6 +15,7 @@ import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.SplashPresenter;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
+import ru.mobilesoft.piligram.ui.fragments.registration.FinishRegistrationFragment;
 import su.ias.utils.AnimUtils;
 import timber.log.Timber;
 
@@ -39,9 +40,6 @@ public class SplashScreen extends BaseActivity implements SplashView {
     @BindView(R.id.pg_loader)
     ProgressBar loader;
 
-    @BindView(R.id.btn_skip_vacation)
-    View btnSkip;
-
     @Override
     protected int getLayout() {
         return R.layout.activity_splash;
@@ -65,11 +63,6 @@ public class SplashScreen extends BaseActivity implements SplashView {
     @OnClick(R.id.btn_vk_auth)
     void onVkAuthClick() {
 
-    }
-
-    @OnClick(R.id.btn_skip_vacation)
-    void onVacationSkipClick(){
-        presenter.skipVacation();
     }
 
     @Override
@@ -111,7 +104,8 @@ public class SplashScreen extends BaseActivity implements SplashView {
 
     @Override
     public void showAddVacation() {
-        AnimUtils.crossfade(btnSkip, loader, 400);
+        //AnimUtils.crossfade(btnSkip, loader, 400);
+        pushFade(new FinishRegistrationFragment(), false, true);
     }
 
     @Override
