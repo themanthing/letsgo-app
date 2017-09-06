@@ -11,14 +11,13 @@ import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.MainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.MainScreenView;
+import ru.mobilesoft.piligram.ui.dialogs.DialogFactory;
 import ru.mobilesoft.piligram.ui.fragments.main.FavoriteFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.MyMessagesFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.MyTravelsFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.SearchFragment;
 
-
 public class MainActivity extends BaseActivity implements MainScreenView {
-
 
     @InjectPresenter
     MainScreenPresenter presenter;
@@ -26,32 +25,42 @@ public class MainActivity extends BaseActivity implements MainScreenView {
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private BottomNavigationView.OnNavigationItemSelectedListener
+            mOnNavigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_search:
-                    presenter.showSearchView();
-                    return true;
-                case R.id.navigation_travels:
-                    presenter.showTravelsView();
-                    return true;
-                case R.id.navigation_profile:
-                    presenter.showProfile();
-                    return true;
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.navigation_search:
+                            presenter.showSearchView();
+                            return true;
+                        case R.id.navigation_travels:
+                            presenter.showTravelsView();
+                            return true;
+                        case R.id.navigation_profile:
+                            presenter.showProfile();
+                            return true;
                 /*case R.id.navigation_favorite:
                     presenter.showFavorite();
                     return true;
                 case R.id.navigation_messages:
                     presenter.showMyMessages();
                     return true;*/
-            }
-            return false;
-        }
+                    }
+                    return false;
+                }
 
-    };
+            };
+
+    @Override
+    public void onBackPressed() {
+        DialogFactory.showYesNoDialog(this, "Вы действительно хотите выйти?",
+                                      "Да", "Нет", (dialog, which) -> {
+                    dialog.dismiss();
+                    finish();
+                }, null);
+    }
 
     @Override
     protected int getLayout() {
