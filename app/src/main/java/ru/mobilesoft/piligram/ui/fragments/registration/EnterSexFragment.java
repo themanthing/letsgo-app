@@ -7,6 +7,7 @@ import android.widget.RadioGroup;
 
 import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
+import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 
 /**
  * Created on 8/14/17.

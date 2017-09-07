@@ -45,5 +45,9 @@
     <string name="btn_skip">Пропустить</string>
     <string name="thanks_with_as">Спасибо, что вы с нами!</string>
     <string name="a_few_seconds">еще несколько секунд</string>
+    <string name="vacation_date_title">Даты отпуска</string>
+    <string name="vacation_date_message">Выберите период, в который вы смогли бы поехать. Это может быть, например, все лето.</string>
+    <string name="vacation_date_begin_title">Дата начала</string>
+    <string name="vacation_date_end_title">Дата окончания</string>
 
 </resources>

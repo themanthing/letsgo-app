@@ -12,6 +12,7 @@ import java.io.File;
 import butterknife.BindView;
 import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
+import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import su.ias.components.selimg.Selimg;
 import su.ias.components.selimg.callbacks.PhotoFileCallback;
 import su.ias.components.selimg.providers.ImageProvider;

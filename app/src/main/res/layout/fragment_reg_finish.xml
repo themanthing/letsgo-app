@@ -84,7 +84,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/continue_caps"
-        android:layout_margin="16dp"
         style="@style/BlueButton"/>
 
 </RelativeLayout>

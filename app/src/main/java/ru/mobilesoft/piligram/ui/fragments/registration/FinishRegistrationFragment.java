@@ -9,7 +9,7 @@ import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.FinishRegPresenter;
 import ru.mobilesoft.piligram.mvp.view.FinishRegView;
 import ru.mobilesoft.piligram.ui.activity.MainActivity;
-import ru.mobilesoft.piligram.ui.activity.TravelWizard;
+import ru.mobilesoft.piligram.ui.activity.VacationWizard;
 import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
 
 /**
@@ -45,7 +45,6 @@ public class FinishRegistrationFragment extends BaseFragment implements FinishRe
 
     @Override
     public void showAddVacationWizard() {
-        getActivity().startActivity(new Intent(getActivity(), TravelWizard.class));
-        getActivity().finish();
+        getActivity().startActivity(new Intent(getActivity(), VacationWizard.class));
     }
 }

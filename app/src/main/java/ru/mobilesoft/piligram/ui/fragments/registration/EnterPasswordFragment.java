@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
+import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import ru.mobilesoft.piligram.utils.SimpleTextWatcher;
 
 /**

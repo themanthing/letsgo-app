@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.ui.dialogs.DialogFactory;
+import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import ru.mobilesoft.piligram.utils.DateUtils;
 import timber.log.Timber;
 

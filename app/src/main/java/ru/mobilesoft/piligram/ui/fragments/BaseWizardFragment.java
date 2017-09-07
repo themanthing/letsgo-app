@@ -1,4 +1,4 @@
-package ru.mobilesoft.piligram.ui.fragments.registration;
+package ru.mobilesoft.piligram.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,13 +20,13 @@ public abstract class BaseWizardFragment extends BaseFragment {
 
     @BindView(R.id.toolbar)
     @Nullable
-    Toolbar toolbar;
+    public Toolbar toolbar;
 
     @BindView(R.id.btn_action)
     @Nullable
-    Button actionButton;
+    public Button actionButton;
 
-    Wizard wizard;
+    protected Wizard wizard;
 
     @Override
     public void onAttach(Context context) {
@@ -54,8 +54,8 @@ public abstract class BaseWizardFragment extends BaseFragment {
         }
     }
 
-    protected boolean validate(){
-       return actionButton.isEnabled();
+    protected boolean validate() {
+        return actionButton != null && actionButton.isEnabled();
     }
 
     protected abstract void saveValue();
