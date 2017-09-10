@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created on 8/16/17.
@@ -24,6 +25,11 @@ public class DateUtils {
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         return calendar.getTime();
+    }
+
+    public static long getDateDiffInDats(Date beginDate, Date endDate){
+        long diff = endDate.getTime() - beginDate.getTime();
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
 }

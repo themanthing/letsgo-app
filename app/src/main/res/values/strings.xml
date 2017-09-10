@@ -49,5 +49,23 @@
     <string name="vacation_date_message">Выберите период, в который вы смогли бы поехать. Это может быть, например, все лето.</string>
     <string name="vacation_date_begin_title">Дата начала</string>
     <string name="vacation_date_end_title">Дата окончания</string>
-
+    <string name="vacation_days_count_title">Длительность отпуска</string>
+    <string name="vacation_days_count_message">На сколько дней вы смогли бы поехать</string>
+    <string name="vacation_direction_title">Направление</string>
+    <string name="vacation_direction_message">Куда вы хотели бы поехать</string>
+    <string-array name="vacation_dates_select">
+        <item>на</item>
+        <item>до</item>
+        <item>от</item>
+    </string-array>
+    <string-array name="vacation_direction">
+        <item>Хоть куда!</item>
+        <item>Россия</item>
+        <item>Европа</item>
+        <item>Азия</item>
+        <item>Африка</item>
+        <item>Австралия</item>
+        <item>Северная Америка</item>
+        <item>Южная Америка</item>
+    </string-array>
 </resources>

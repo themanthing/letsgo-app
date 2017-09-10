@@ -3,6 +3,7 @@ package ru.mobilesoft.piligram.ui.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -61,6 +62,16 @@ public abstract class BaseWizardFragment extends BaseFragment {
     protected abstract void saveValue();
 
     protected abstract void loadValue();
+
+    protected void setActionButtonText(@StringRes int buttonText){
+        setActionButtonText(getString(buttonText));
+    }
+
+    protected void setActionButtonText(CharSequence buttonText){
+        if (actionButton != null){
+            actionButton.setText(buttonText);
+        }
+    }
 
     protected void setActionButtonEnabled(boolean enabled){
         if (actionButton != null){

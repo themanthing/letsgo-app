@@ -21,8 +21,8 @@ import timber.log.Timber;
 
 public class VacationDateFragment extends BaseWizardFragment {
 
-    private static final String VACATION_BEGIN_DATE = "v_begin_date";
-    private static final String VACATION_END_DATE = "v_end_date";
+    static final String VACATION_BEGIN_DATE = "v_begin_date";
+    static final String VACATION_END_DATE = "v_end_date";
 
     private Date beginDate;
     private Date endDate;
@@ -68,6 +68,12 @@ public class VacationDateFragment extends BaseWizardFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        checkButtonStatus();
+    }
+
+    @Override
     protected void saveValue() {
         wizard.setValue(VACATION_BEGIN_DATE, beginDate);
         wizard.setValue(VACATION_END_DATE, endDate);
@@ -83,7 +89,6 @@ public class VacationDateFragment extends BaseWizardFragment {
             endDate = (Date) wizard.getValue(VACATION_END_DATE);
             Timber.d("end date = " + endDate);
             edEndDate.setText(DateUtils.convertDateToString(endDate));
-            checkButtonStatus();
         }
     }
 }
