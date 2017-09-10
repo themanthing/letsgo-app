@@ -75,8 +75,8 @@ public class VacationDaysFragment extends BaseWizardFragment {
     }
 
     private int getDaysCount(){
-
-        return 0;
+        String text = edDaysCount.getText().toString();
+        return Integer.parseInt(text.replaceAll("[\\D]", ""));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
