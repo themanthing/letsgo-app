@@ -1,6 +1,7 @@
 package ru.mobilesoft.piligram.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -14,6 +15,15 @@ public class DateUtils {
 
     public static String convertDateToString(Date date){
         return DATE_FORMAT.format(date);
+    }
+
+    public static Date createDate(int year, int month, int dayOfMonth){
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        return calendar.getTime();
     }
 
 }

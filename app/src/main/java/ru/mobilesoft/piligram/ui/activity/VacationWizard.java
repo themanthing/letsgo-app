@@ -3,6 +3,7 @@ package ru.mobilesoft.piligram.ui.activity;
 import ru.mobilesoft.piligram.ui.fragments.registration.EnterPasswordFragment;
 import ru.mobilesoft.piligram.ui.fragments.vacation.VacationDateFragment;
 import ru.mobilesoft.piligram.ui.fragments.vacation.VacationDaysFragment;
+import ru.mobilesoft.piligram.ui.fragments.vacation.VacationWhereFragment;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import timber.log.Timber;
 
@@ -28,7 +29,7 @@ public class VacationWizard extends BaseWizardActivity {
                 new BaseFragmentPagerAdapter(getSupportFragmentManager());
         adapter.addItem(new VacationDateFragment());
         adapter.addItem(new VacationDaysFragment());
-        adapter.addItem(new EnterPasswordFragment());
+        adapter.addItem(new VacationWhereFragment());
         return adapter;
     }
 }
