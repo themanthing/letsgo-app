@@ -55,7 +55,6 @@ public class VacationDaysFragment extends BaseWizardFragment {
                 R.array.vacation_dates_select, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         type.setAdapter(adapter);
-        setActionButtonEnabled(true);
         edDaysCount.addTextChangedListener(new SimpleTextWatcher() {
             @Override
             public void afterTextChanged(Editable editable) {
@@ -66,7 +65,11 @@ public class VacationDaysFragment extends BaseWizardFragment {
         edDaysCount.setOnFocusChangeListener((daysCount, b) -> {
             int count = getDaysCount();
             if (b) {
-                edDaysCount.setText("" + count);
+                if (count > 0) {
+                    edDaysCount.setText("" + count);
+                }else {
+                    edDaysCount.setText("");
+                }
             } else {
                 edDaysCount.setText(getString(R.string.vacation_days_count, count));
             }
@@ -75,6 +78,8 @@ public class VacationDaysFragment extends BaseWizardFragment {
 
     private int getDaysCount() {
         String text = edDaysCount.getText().toString();
+        if (TextUtils.isEmpty(text))
+            return -1;
         return Integer.parseInt(text.replaceAll("[\\D]", ""));
     }
 

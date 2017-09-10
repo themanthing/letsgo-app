@@ -54,6 +54,7 @@
     <string name="vacation_direction_title">Направление</string>
     <string name="vacation_direction_message">Куда вы хотели бы поехать</string>
     <string name="vacation_days_count">%d дней</string>
+    <string name="travel_type_title">Какому типу наиболее соответствует ваше путешествие?</string>
     <string-array name="vacation_dates_select">
         <item>на</item>
         <item>до</item>
@@ -69,4 +70,10 @@
         <item>Северная Америка</item>
         <item>Южная Америка</item>
     </string-array>
+    <string name="travels_type_item_active">Активный отдых</string>
+    <string name="travels_type_item_beach">Пляжный отдых</string>
+    <string name="travels_type_item_car">Поездка на автомобиле</string>
+    <string name="travels_type_item_excursions">Экскурсии</string>
+    <string name="travels_type_item_child">С детьми</string>
+    <string name="travels_type_item_other">Другое</string>
 </resources>
