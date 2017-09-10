@@ -14,7 +14,7 @@ public class RegistrationPresenter extends BasePresenter<RegistrationView> {
      * собственно формирование запроса на регистрацию
      */
     public void register() {
-        // пока что просто перелестнем на следующий экран
+        //TODO пока что просто перелестнем на следующий экран
         getViewState().showSuccessScreen();
     }
 }

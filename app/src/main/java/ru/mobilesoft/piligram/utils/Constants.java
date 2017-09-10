@@ -11,6 +11,14 @@ public class Constants {
     public static final String ACTION_SHOW_TRAVELS_FORM = "travels_form";
     public static final String EVENT_UPDATE_DATE = "update_date";
 
+    public static final String VACATION_BEGIN_DATE = "v_begin_date";
+    public static final String VACATION_END_DATE = "v_end_date";
+    public static final String VACATION_DAYS_TYPE = "vd_tape";
+    public static final String VACATION_DAYS_TYPE_VALUE = "vd_tape_val";
+    public static final String VACATION_DAYS_COUNT = "vd_count";
+    public static final String VACATION_DIRECTION = "direction";
+    public static final String VACATION_DIRECTION_VAL = "direction_val";
+
     public Constants() {
         throw new RuntimeException("don`t do that!");
     }

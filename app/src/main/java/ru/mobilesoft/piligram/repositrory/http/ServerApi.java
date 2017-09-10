@@ -2,6 +2,7 @@ package ru.mobilesoft.piligram.repositrory.http;
 
 import java.util.List;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -15,6 +16,7 @@ import retrofit2.http.Path;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.request.CheckEmailRequest;
 import ru.mobilesoft.piligram.model.request.RegistrationRequest;
+import ru.mobilesoft.piligram.model.request.VacationRequest;
 import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.model.response.TokenResponse;
 import ru.mobilesoft.piligram.model.response.TravelsResponse;
@@ -96,5 +98,8 @@ public interface ServerApi {
     @GET("/api/people/all/{page}")
     Observable<List<People>> getPeopleList(@Path("page") int page);
 
+
+    @POST("/api/people/me/vacation")
+    Completable addVacation(@Body VacationRequest request);
 
 }

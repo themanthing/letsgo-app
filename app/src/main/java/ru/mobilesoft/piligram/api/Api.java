@@ -1,5 +1,7 @@
 package ru.mobilesoft.piligram.api;
 
+import java.util.HashMap;
+
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import ru.mobilesoft.piligram.model.response.People;
@@ -50,5 +52,10 @@ public interface Api {
     Observable<People> getMe();
 
 
-
+    /**
+     * добавить отпуск
+     * @return
+     * @param values
+     */
+    Completable addVacation(HashMap<String, Object> values);
 }

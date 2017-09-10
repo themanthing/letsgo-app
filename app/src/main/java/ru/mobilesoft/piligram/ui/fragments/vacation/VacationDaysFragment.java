@@ -23,8 +23,11 @@ import ru.mobilesoft.piligram.utils.Constants;
 import ru.mobilesoft.piligram.utils.DateUtils;
 import ru.mobilesoft.piligram.utils.SimpleTextWatcher;
 
-import static ru.mobilesoft.piligram.ui.fragments.vacation.VacationDateFragment.VACATION_BEGIN_DATE;
-import static ru.mobilesoft.piligram.ui.fragments.vacation.VacationDateFragment.VACATION_END_DATE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_BEGIN_DATE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DAYS_COUNT;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DAYS_TYPE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DAYS_TYPE_VALUE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_END_DATE;
 
 /**
  * Created on 9/7/17.
@@ -32,10 +35,6 @@ import static ru.mobilesoft.piligram.ui.fragments.vacation.VacationDateFragment.
 
 public class VacationDaysFragment extends BaseWizardFragment {
 
-
-    private static final String VACATION_DAYS_TYPE = "vd_tape";
-    private static final String VACATION_DAYS_TYPE_VALUE = "vd_tape_val";
-    private static final String VACATION_DAYS_COUNT = "vd_count";
 
     @BindView(R.id.sp_type)
     Spinner type;
@@ -57,7 +56,7 @@ public class VacationDaysFragment extends BaseWizardFragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         type.setAdapter(adapter);
         setActionButtonEnabled(true);
-        edDaysCount.addTextChangedListener(new SimpleTextWatcher(){
+        edDaysCount.addTextChangedListener(new SimpleTextWatcher() {
             @Override
             public void afterTextChanged(Editable editable) {
                 setActionButtonEnabled(!TextUtils.isEmpty(editable));
@@ -66,23 +65,23 @@ public class VacationDaysFragment extends BaseWizardFragment {
 
         edDaysCount.setOnFocusChangeListener((daysCount, b) -> {
             int count = getDaysCount();
-            if (b){
+            if (b) {
                 edDaysCount.setText("" + count);
-            }else{
+            } else {
                 edDaysCount.setText(getString(R.string.vacation_days_count, count));
             }
         });
     }
 
-    private int getDaysCount(){
+    private int getDaysCount() {
         String text = edDaysCount.getText().toString();
         return Integer.parseInt(text.replaceAll("[\\D]", ""));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     @SuppressWarnings("unused")
-    void onMessage(MessageEvent messageEvent){
-        if (messageEvent.getAction().equals(Constants.EVENT_UPDATE_DATE)){
+    void onMessage(MessageEvent messageEvent) {
+        if (messageEvent.getAction().equals(Constants.EVENT_UPDATE_DATE)) {
             Date beginDate = (Date) wizard.getValue(VACATION_BEGIN_DATE);
             Date endDate = (Date) wizard.getValue(VACATION_END_DATE);
             if (beginDate != null && endDate != null) {
@@ -101,7 +100,7 @@ public class VacationDaysFragment extends BaseWizardFragment {
 
     @Override
     protected void loadValue() {
-        if (wizard.containsKey(VACATION_DAYS_COUNT)){
+        if (wizard.containsKey(VACATION_DAYS_COUNT)) {
             int daysCount = (int) wizard.getValue(VACATION_DAYS_COUNT);
             edDaysCount.setText(getString(R.string.vacation_days_count, daysCount));
             type.setSelection((Integer) wizard.getValue(VACATION_DAYS_TYPE));

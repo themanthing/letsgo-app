@@ -11,14 +11,14 @@ import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import timber.log.Timber;
 
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DIRECTION;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DIRECTION_VAL;
+
 /**
  * Created on 9/7/17.
  */
 
 public class VacationWhereFragment extends BaseWizardFragment {
-
-    private static final String VACATION_DIRECTION = "direction";
-    private static final String VACATION_DIRECTION_VAL = "direction_val";
 
     @BindView(R.id.sp_where)
     Spinner direction;

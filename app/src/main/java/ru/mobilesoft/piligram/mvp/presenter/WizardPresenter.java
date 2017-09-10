@@ -33,4 +33,8 @@ public class WizardPresenter extends BasePresenter<WizardView> {
     public boolean containsKey(String name) {
         return wizardParam.containsKey(name);
     }
+
+    public HashMap<String, Object> getValues(){
+        return wizardParam;
+    }
 }

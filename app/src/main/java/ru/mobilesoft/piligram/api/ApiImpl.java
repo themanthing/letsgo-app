@@ -2,6 +2,8 @@ package ru.mobilesoft.piligram.api;
 
 import android.content.Context;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Completable;
@@ -9,12 +11,19 @@ import io.reactivex.CompletableObserver;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
+import ru.mobilesoft.piligram.model.request.VacationRequest;
 import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.repositrory.cache.CacheRepository;
 import ru.mobilesoft.piligram.repositrory.http.RetrofitApi;
 import ru.mobilesoft.piligram.repositrory.http.ServerApi;
 import ru.mobilesoft.piligram.repositrory.preference.PreferenceImpl;
 import ru.mobilesoft.piligram.repositrory.preference.PreferenceInterface;
+
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_BEGIN_DATE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DAYS_COUNT;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DAYS_TYPE_VALUE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_DIRECTION_VAL;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_END_DATE;
 
 /**
  * Created on 8/7/17.
@@ -97,6 +106,22 @@ public class ApiImpl implements Api {
                     preference.setToken(tokenResponse.getAccessToken());
                     preference.setRefreshToken(tokenResponse.getRefreshToken());
                     return CompletableObserver::onComplete;
+                })
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Completable addVacation(HashMap<String, Object> values) {
+        VacationRequest request = new VacationRequest();
+        request.setBeginDate((Date) values.get(VACATION_BEGIN_DATE));
+        request.setEndDate((Date) values.get(VACATION_END_DATE));
+        request.setDaysCount((Integer) values.get(VACATION_DAYS_COUNT));
+        request.setDirection((String) values.get(VACATION_DIRECTION_VAL));
+        request.setType((String) values.get(VACATION_DAYS_TYPE_VALUE));
+        return http.addVacation(request)
+                .delay(300, TimeUnit.MILLISECONDS)
+                .doOnComplete(() -> {
+                    // TODO добавить пользователю отпуск !
                 })
                 .observeOn(AndroidSchedulers.mainThread());
     }

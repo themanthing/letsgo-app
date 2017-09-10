@@ -104,7 +104,6 @@ public class SplashScreen extends BaseActivity implements SplashView {
 
     @Override
     public void showAddVacation() {
-        //AnimUtils.crossfade(btnSkip, loader, 400);
         pushFade(new FinishRegistrationFragment(), false, true);
     }
 

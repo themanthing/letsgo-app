@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * Created on 8/18/17.
- * Pojo отправка данных на сервер регистрации
+ * отправка данных на сервер регистрации
  */
 
 public class RegistrationRequest {

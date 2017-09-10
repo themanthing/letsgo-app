@@ -15,14 +15,14 @@ import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import ru.mobilesoft.piligram.utils.DateUtils;
 import timber.log.Timber;
 
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_BEGIN_DATE;
+import static ru.mobilesoft.piligram.utils.Constants.VACATION_END_DATE;
+
 /**
  * Created on 9/7/17.
  */
 
 public class VacationDateFragment extends BaseWizardFragment {
-
-    static final String VACATION_BEGIN_DATE = "v_begin_date";
-    static final String VACATION_END_DATE = "v_end_date";
 
     private Date beginDate;
     private Date endDate;
