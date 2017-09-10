@@ -53,6 +53,7 @@
     <string name="vacation_days_count_message">На сколько дней вы смогли бы поехать</string>
     <string name="vacation_direction_title">Направление</string>
     <string name="vacation_direction_message">Куда вы хотели бы поехать</string>
+    <string name="vacation_days_count">%d дней</string>
     <string-array name="vacation_dates_select">
         <item>на</item>
         <item>до</item>
