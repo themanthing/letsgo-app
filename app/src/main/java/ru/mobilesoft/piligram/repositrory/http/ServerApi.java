@@ -9,14 +9,13 @@ import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
-import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.request.CheckEmailRequest;
 import ru.mobilesoft.piligram.model.request.RegistrationRequest;
-import ru.mobilesoft.piligram.model.request.VacationRequest;
+import ru.mobilesoft.piligram.model.Vacation;
 import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.model.response.TokenResponse;
 import ru.mobilesoft.piligram.model.response.TravelsResponse;
@@ -100,6 +99,6 @@ public interface ServerApi {
 
 
     @POST("/api/people/me/vacation")
-    Completable addVacation(@Body VacationRequest request);
+    Completable addVacation(@Body Vacation request);
 
 }

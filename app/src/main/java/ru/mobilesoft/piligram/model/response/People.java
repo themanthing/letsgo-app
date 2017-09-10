@@ -2,8 +2,11 @@ package ru.mobilesoft.piligram.model.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import ru.mobilesoft.piligram.model.Vacation;
 
 /**
  * Created on 8/18/17.
@@ -50,5 +53,12 @@ public class People {
 
     public List<Vacation> getVacations() {
         return vacations;
+    }
+
+    public void addVacation(Vacation vacation) {
+        if (vacations == null){
+            vacations = new ArrayList<>();
+        }
+        vacations.add(vacation);
     }
 }

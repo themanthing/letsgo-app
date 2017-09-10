@@ -1,4 +1,4 @@
-package ru.mobilesoft.piligram.model.request;
+package ru.mobilesoft.piligram.model;
 
 import java.util.Date;
 
@@ -6,7 +6,7 @@ import java.util.Date;
  * Created on 10.09.17.
  */
 
-public class VacationRequest {
+public class Vacation {
 
     private Date beginDate;
 

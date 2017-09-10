@@ -11,7 +11,7 @@ import io.reactivex.CompletableObserver;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
-import ru.mobilesoft.piligram.model.request.VacationRequest;
+import ru.mobilesoft.piligram.model.Vacation;
 import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.repositrory.cache.CacheRepository;
 import ru.mobilesoft.piligram.repositrory.http.RetrofitApi;
@@ -112,7 +112,7 @@ public class ApiImpl implements Api {
 
     @Override
     public Completable addVacation(HashMap<String, Object> values) {
-        VacationRequest request = new VacationRequest();
+        Vacation request = new Vacation();
         request.setBeginDate((Date) values.get(VACATION_BEGIN_DATE));
         request.setEndDate((Date) values.get(VACATION_END_DATE));
         request.setDaysCount((Integer) values.get(VACATION_DAYS_COUNT));
@@ -121,7 +121,7 @@ public class ApiImpl implements Api {
         return http.addVacation(request)
                 .delay(300, TimeUnit.MILLISECONDS)
                 .doOnComplete(() -> {
-                    // TODO добавить пользователю отпуск !
+                    cache.getMe().addVacation(request);
                 })
                 .observeOn(AndroidSchedulers.mainThread());
     }
