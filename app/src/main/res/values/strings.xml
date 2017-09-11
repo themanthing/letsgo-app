@@ -76,4 +76,14 @@
     <string name="travels_type_item_excursions">Экскурсии</string>
     <string name="travels_type_item_child">С детьми</string>
     <string name="travels_type_item_other">Другое</string>
+    <string name="travel_cost_rent">Аренда жилья</string>
+    <string name="travel_cost_transfer">Трансфер</string>
+    <string name="travel_cost_insurance">Страховка</string>
+    <string name="travel_cost_car_rent">Аренда авто</string>
+    <string name="travel_cost_tickets">Билеты</string>
+    <string name="travel_cost_title">Добавьте название и стоимость путешествия</string>
+    <string name="travel_cost_title_hint">Каникулы в марокко</string>
+    <string name="travel_cost_price_hint">руб./чел</string>
+    <string name="travel_cost_price_label">Укажите стоимость в рублях на человека и что в нее включено:</string>
+    <string name="travel_cost_title_label">Постарайтесь сделать заголовок коротким и информативным:</string>
 </resources>

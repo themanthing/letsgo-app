@@ -49,7 +49,7 @@ public class VacationWhereFragment extends BaseWizardFragment {
     @Override
     protected void loadValue() {
         if (wizard.containsKey(VACATION_DIRECTION)){
-            direction.setSelected((Boolean) wizard.getValue(VACATION_DIRECTION));
+            direction.setSelection((Integer) wizard.getValue(VACATION_DIRECTION));
         }
     }
 }
