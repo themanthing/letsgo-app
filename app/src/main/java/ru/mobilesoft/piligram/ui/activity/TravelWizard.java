@@ -1,18 +1,11 @@
 package ru.mobilesoft.piligram.ui.activity;
 
-import org.greenrobot.eventbus.EventBus;
-
-import ru.mobilesoft.piligram.events.MessageEvent;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelCostFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelDateFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelFinishSragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelImagesFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelRoadFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelTypeFragment;
-import ru.mobilesoft.piligram.ui.fragments.vacation.VacationDateFragment;
-import ru.mobilesoft.piligram.ui.fragments.vacation.VacationDaysFragment;
-import ru.mobilesoft.piligram.ui.fragments.vacation.VacationWhereFragment;
-import ru.mobilesoft.piligram.utils.Constants;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import timber.log.Timber;
 
