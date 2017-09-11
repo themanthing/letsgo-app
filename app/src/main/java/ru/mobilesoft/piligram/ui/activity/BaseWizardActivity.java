@@ -64,4 +64,9 @@ public abstract class BaseWizardActivity extends BaseActivity implements Wizard,
     public boolean containsKey(String name) {
         return wizardPresenter.containsKey(name);
     }
+
+    @Override
+    public int getInt(String key) {
+        return (int) getValue(key);
+    }
 }

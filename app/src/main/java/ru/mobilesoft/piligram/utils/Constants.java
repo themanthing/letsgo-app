@@ -19,6 +19,9 @@ public class Constants {
     public static final String VACATION_DIRECTION = "direction";
     public static final String VACATION_DIRECTION_VAL = "direction_val";
 
+    public static final String TRAVEL_TYPE = "t_type";
+    public static final String TRAVEL_TYPE_VALUE = "t_type_val";
+
     public Constants() {
         throw new RuntimeException("don`t do that!");
     }

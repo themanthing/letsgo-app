@@ -37,4 +37,5 @@ public interface Wizard {
      */
     boolean containsKey(String name);
 
+    int getInt(String travelType);
 }
