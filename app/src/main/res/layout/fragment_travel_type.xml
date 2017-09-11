@@ -31,18 +31,54 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/travel_type_title"
                 android:textColor="#4a4a4a"
+                android:paddingBottom="5dp"
                 android:textSize="30sp" />
 
             <LinearLayout
+                android:id="@+id/select_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_active"
+                    android:text="@string/travels_type_item_active"
+                    app:icon="@drawable/ski"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_beach"
+                    android:text="@string/travels_type_item_beach"
+                    app:icon="@drawable/palm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_car"
+                    android:text="@string/travels_type_item_car"
+                    app:icon="@drawable/ic_directions_car_black_24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_excursions"
+                    android:text="@string/travels_type_item_excursions"
+                    app:icon="@drawable/ic_photo_camera_black_24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_child"
+                    android:text="@string/travels_type_item_child"
+                    app:icon="@drawable/ic_child_friendly_black_24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ru.mobilesoft.piligram.ui.widget.CustomRadioButton
+                    android:id="@+id/rb_other"
+                    android:text="@string/travels_type_item_other"
+                    app:icon="@drawable/ic_landscape_black_24dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
