@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/WizardContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="4dp"
+        android:text="@string/travel_image_title"
+        android:textColor="#4a4a4a"
+        android:textSize="30sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_images"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_action"
+        android:layout_below="@+id/title" />
+
+    <Button
+        android:id="@+id/btn_action"
+        style="@style/BlueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/next" />
+
+
+</RelativeLayout>

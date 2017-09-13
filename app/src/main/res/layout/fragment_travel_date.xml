@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp" />
+
+    <RelativeLayout
+        style="@style/WizardContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_action"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/travel_date_title"
+            android:textColor="#4a4a4a"
+            android:textSize="30sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/frameLayout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false">
+
+                <EditText
+                    android:id="@+id/ed_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:hint="@string/vacation_date_begin_title"
+                    tools:ignore="TextFields" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:id="@+id/ti_date_layout"
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:clickable="true"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/frameLayout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false">
+
+                <EditText
+                    android:id="@+id/ed_date_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:hint="@string/vacation_date_end_title"
+                    tools:ignore="TextFields" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:id="@+id/ti_date_end_layout"
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:clickable="true"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_action"
+        style="@style/BlueButton"
+        android:text="@string/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

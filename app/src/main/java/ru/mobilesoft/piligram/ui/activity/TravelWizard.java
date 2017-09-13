@@ -2,7 +2,7 @@ package ru.mobilesoft.piligram.ui.activity;
 
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelCostFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelDateFragment;
-import ru.mobilesoft.piligram.ui.fragments.travels.TravelFinishSragment;
+import ru.mobilesoft.piligram.ui.fragments.travels.TravelFinishFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelImagesFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelRoadFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelTypeFragment;
@@ -34,7 +34,7 @@ public class TravelWizard extends BaseWizardActivity {
         adapter.addItem(new TravelRoadFragment());
         adapter.addItem(new TravelDateFragment());
         adapter.addItem(new TravelImagesFragment());
-        adapter.addItem(new TravelFinishSragment());
+        adapter.addItem(new TravelFinishFragment());
         return adapter;
     }
 }

@@ -86,4 +86,8 @@
     <string name="travel_cost_price_hint">руб./чел</string>
     <string name="travel_cost_price_label">Укажите стоимость в рублях на человека и что в нее включено:</string>
     <string name="travel_cost_title_label">Постарайтесь сделать заголовок коротким и информативным:</string>
+    <string name="travel_cost_equipment">Аренда оборудования</string>
+    <string name="travel_road_title">Опишите ваш маршрут</string>
+    <string name="travel_date_title">Укажите даты вашего путешествия</string>
+    <string name="travel_image_title">Выберите подходящую картинку</string>
 </resources>

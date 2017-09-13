@@ -51,6 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/travel_cost_title_hint"
+                    android:singleLine="true"
                     android:maxLength="150" />
             </android.support.design.widget.TextInputLayout>
 
@@ -69,6 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/travel_cost_price_hint"
+                    android:singleLine="true"
                     android:inputType="numberDecimal" />
             </android.support.design.widget.TextInputLayout>
 
@@ -108,6 +110,19 @@
                 android:padding="16dp"
                 android:text="@string/travel_cost_tickets" />
 
+            <CheckBox
+                android:id="@+id/cd_rent_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/travel_cost_equipment" />
+
+            <CheckBox
+                android:id="@+id/cd_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/travels_type_item_other" />
 
         </LinearLayout>
 
