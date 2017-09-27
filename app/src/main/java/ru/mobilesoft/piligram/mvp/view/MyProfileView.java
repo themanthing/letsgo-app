@@ -23,4 +23,7 @@ public interface MyProfileView extends BaseView {
 
     @StateStrategyType(SkipStrategy.class)
     void vacationWizard();
+
+    @StateStrategyType(SkipStrategy.class)
+    void openEditProfile();
 }

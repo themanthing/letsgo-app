@@ -15,10 +15,12 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.model.Vacation;
 import ru.mobilesoft.piligram.mvp.presenter.ProfilePresenter;
 import ru.mobilesoft.piligram.mvp.view.MyProfileView;
+import ru.mobilesoft.piligram.ui.activity.MyProfileEditActivity;
 import ru.mobilesoft.piligram.ui.activity.VacationWizard;
 import ru.mobilesoft.piligram.ui.adapters.MyProfileVacationAdapter;
 import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
@@ -54,7 +56,6 @@ public class MyProfileFragment extends BaseFragment implements MyProfileView {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        toolbar.inflateMenu(R.menu.my_profile_edit);
         vacations.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
@@ -90,6 +91,11 @@ public class MyProfileFragment extends BaseFragment implements MyProfileView {
         }
     }
 
+    @OnClick(R.id.btn_edit_profile)
+    void onEditProfileClick(){
+        presenter.editProfile();
+    }
+
     @Override
     public void showAvatar(String avatarUrl) {
         ImageUtils.loadImage(getActivity(), avatarUrl, avatar);
@@ -98,5 +104,10 @@ public class MyProfileFragment extends BaseFragment implements MyProfileView {
     @Override
     public void vacationWizard() {
         getActivity().startActivity(new Intent(getActivity(), VacationWizard.class));
+    }
+
+    @Override
+    public void openEditProfile() {
+        getActivity().startActivity(new Intent(getActivity(), MyProfileEditActivity.class));
     }
 }

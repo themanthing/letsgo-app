@@ -30,4 +30,8 @@ public class ProfilePresenter extends BasePresenter<MyProfileView> {
     public void openAddVacationWizard() {
         getViewState().vacationWizard();
     }
+
+    public void editProfile() {
+        getViewState().openEditProfile();
+    }
 }

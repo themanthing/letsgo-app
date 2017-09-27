@@ -28,6 +28,17 @@
                 app:layout_collapseMode="parallax"
                 />
 
+            <ImageButton
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp"
+                app:layout_collapseMode="parallax"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_mode_edit_white_24dp"/>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
