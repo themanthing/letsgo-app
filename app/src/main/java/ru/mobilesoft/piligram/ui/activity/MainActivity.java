@@ -12,9 +12,9 @@ import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.MainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.MainScreenView;
-import ru.mobilesoft.piligram.ui.dialogs.DialogFactory;
 import ru.mobilesoft.piligram.ui.fragments.main.FavoriteFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.MyMessagesFragment;
+import ru.mobilesoft.piligram.ui.fragments.main.MyProfileFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.MyTravelsFragment;
 import ru.mobilesoft.piligram.ui.fragments.main.SearchFragment;
 
@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity implements MainScreenView {
 
     @Override
     public void onBackPressed() {
-        //TODO убрать строки в ресурсы
+       /* //TODO убрать строки в ресурсы уточнить а надо ли это вообще
         DialogFactory.showYesNoDialog(this,
                                       "Вы действительно хотите выйти?",
                                       "Да",
@@ -37,7 +37,8 @@ public class MainActivity extends BaseActivity implements MainScreenView {
                                           dialog.dismiss();
                                           finish();
                                       },
-                                      null);
+                                      null);*/
+       super.onBackPressed();
     }
 
     @Override
@@ -71,6 +72,11 @@ public class MainActivity extends BaseActivity implements MainScreenView {
         push(new MyTravelsFragment(), false, false);
     }
 
+    @Override
+    public void showMyProfile() {
+        push(new MyProfileFragment(), false, false);
+    }
+
     private void clearSelectNav(@IdRes int id) {
         for (int i = 0; i < bottomNavigationLayout.getChildCount(); i++) {
             bottomNavigationLayout.getChildAt(i)
@@ -98,7 +104,6 @@ public class MainActivity extends BaseActivity implements MainScreenView {
             case R.id.navigation_travels:
                 presenter.showTravelsView();
                 return;
-
         }
 
     }

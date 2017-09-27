@@ -125,4 +125,9 @@ public class ApiImpl implements Api {
                 })
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
+    @Override
+    public People getUser() {
+        return cache.getMe();
+    }
 }

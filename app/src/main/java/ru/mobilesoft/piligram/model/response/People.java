@@ -29,6 +29,9 @@ public class People {
     @SerializedName("sex")
     private String sex;
 
+    @SerializedName("avatar")
+    private String avaterUrl;
+
     private List<Vacation> vacations;
 
     public String getName() {
@@ -60,5 +63,13 @@ public class People {
             vacations = new ArrayList<>();
         }
         vacations.add(vacation);
+    }
+
+    public String getAvaterUrl() {
+        return avaterUrl;
+    }
+
+    public void setAvaterUrl(String avaterUrl) {
+        this.avaterUrl = avaterUrl;
     }
 }

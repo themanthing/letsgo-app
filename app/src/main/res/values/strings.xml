@@ -90,4 +90,11 @@
     <string name="travel_road_title">Опишите ваш маршрут</string>
     <string name="travel_date_title">Укажите даты вашего путешествия</string>
     <string name="travel_image_title">Выберите подходящую картинку</string>
+    <string name="action_yes">Да</string>
+    <string name="action_no">Нет</string>
+    <string name="action_edit">Изменить</string>
+    <string name="profile_my_vavation">Мои отпуска</string>
+    <string name="action_add_vacation">Добавить отпуск</string>
+    <string name="from">на %s</string>
+    <string name="item_profile_days">%1$s - %2$s</string>
 </resources>

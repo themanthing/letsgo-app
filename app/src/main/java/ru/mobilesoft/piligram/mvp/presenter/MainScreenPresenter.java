@@ -37,7 +37,7 @@ public class MainScreenPresenter extends BasePresenter<MainScreenView> {
      * профиль пользователя
      */
     public void showProfile() {
-
+        getViewState().showMyProfile();
     }
 
     /**

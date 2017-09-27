@@ -16,8 +16,8 @@
         android:id="@+id/shadow"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/black_12"
-        android:layout_above="@+id/navigation" />
+        android:layout_above="@+id/navigation"
+        android:background="@color/black_12" />
 
     <LinearLayout
         android:id="@+id/navigation"
@@ -38,7 +38,7 @@
             style="@style/BottomButtons"
             android:drawableTop="@drawable/ic_favorite"
             android:text="@string/title_favorites"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/navigation_travels"
@@ -51,7 +51,7 @@
             style="@style/BottomButtons"
             android:drawableTop="@drawable/ic_message"
             android:text="@string/title_messages"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/navigation_profile"

@@ -12,7 +12,7 @@ import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.ui.fragments.BaseWizardFragment;
 import ru.mobilesoft.piligram.utils.SimpleTextWatcher;
-import ru.mobilesoft.piligram.utils.ValidateUtils;
+import su.ias.utils.ValidateUtils;
 
 /**
  * Created on 8/14/17.

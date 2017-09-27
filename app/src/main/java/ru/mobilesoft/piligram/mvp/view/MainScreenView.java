@@ -26,4 +26,9 @@ public interface MainScreenView extends BaseView {
      * показать мои путеществия
      */
     void showMyTravels();
+
+    /**
+     * показать мой профиль
+     */
+    void showMyProfile();
 }

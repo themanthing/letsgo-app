@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="14dp"
+    android:minHeight="86dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/bus"/>
+
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="normal"
+        android:textColor="#de000000"
+        android:lineSpacingExtra="8sp"
+        android:layout_marginBottom="8dp"
+        tools:text="Февраль 2018 - Март 2018"
+        android:layout_toEndOf="@+id/icon" />
+
+    <TextView
+        android:id="@+id/tv_day_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="#de000000"
+        android:lineSpacingExtra="6sp"
+        android:layout_marginBottom="4dp"
+        tools:text="на 14 дней"
+        android:layout_below="@id/tv_date"
+        android:layout_toEndOf="@+id/icon"
+        />
+
+    <TextView
+        android:id="@+id/tv_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="#de000000"
+        android:lineSpacingExtra="6sp"
+        tools:text="Европа"
+        android:layout_marginBottom="7dp"
+        android:layout_below="@id/tv_day_count"
+        android:layout_toEndOf="@+id/icon"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+
+    <View
+        android:layout_below="@id/tv_place"
+        android:layout_width="match_parent"
+        android:layout_height="0.9dp"
+        android:background="@color/silver" />
+
+</RelativeLayout>

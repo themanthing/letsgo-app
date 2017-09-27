@@ -22,6 +22,8 @@ public class Constants {
     public static final String TRAVEL_TYPE = "t_type";
     public static final String TRAVEL_TYPE_VALUE = "t_type_val";
 
+    public static final String SEX_MALE = "male";
+
     public Constants() {
         throw new RuntimeException("don`t do that!");
     }

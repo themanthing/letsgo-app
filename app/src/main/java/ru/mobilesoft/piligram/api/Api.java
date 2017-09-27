@@ -58,4 +58,10 @@ public interface Api {
      * @param values
      */
     Completable addVacation(HashMap<String, Object> values);
+
+    /**
+     * получить мои данные из кеша
+     * @return
+     */
+    People getUser();
 }

@@ -26,7 +26,6 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "$version"
-        vectorDrawables.useSupportLibrary = true
         buildConfigField "String", "BASE_URL", "\"http://192.168.36.129:1337/\""
         buildConfigField "String", "AUTH", "\"android:SomeRandomCharsAndNumbers\""
         buildConfigField "String", "VERSION", "\"$version\""
@@ -111,7 +110,7 @@ dependencies {
     // ias adapters
     compile 'su.ias.components:adapters-android:1.0.4'
     // utils android
-    compile 'su.ias.components:utils-android:1.0.7'
+    compile 'su.ias.components:utils-android:1.0.11'
 
     // Logging
     compile 'com.jakewharton.timber:timber:4.5.1'

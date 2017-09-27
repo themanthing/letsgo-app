@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import com.arellomobile.mvp.InjectViewState;
 
 import ru.mobilesoft.piligram.mvp.view.LoginView;
-import ru.mobilesoft.piligram.utils.ValidateUtils;
+import su.ias.utils.ValidateUtils;
 
 /**
  * Created on 8/18/17.

@@ -66,7 +66,7 @@ public class VacationDaysFragment extends BaseWizardFragment {
             int count = getDaysCount();
             if (b) {
                 if (count > 0) {
-                    edDaysCount.setText("" + count);
+                    edDaysCount.setText(String.valueOf(count));
                 }else {
                     edDaysCount.setText("");
                 }
@@ -91,7 +91,7 @@ public class VacationDaysFragment extends BaseWizardFragment {
             Date endDate = (Date) wizard.getValue(VACATION_END_DATE);
             if (beginDate != null && endDate != null) {
                 edDaysCount.setText(getString(R.string.vacation_days_count,
-                        DateUtils.getDateDiffInDats(beginDate, endDate)));
+                        DateUtils.getDateDiffInMilliseconds(beginDate, endDate)));
             }
         }
     }

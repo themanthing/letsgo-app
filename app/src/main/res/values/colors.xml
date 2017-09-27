@@ -6,4 +6,7 @@
     <color name="white">#ffffff</color>
     <color name="black">#111111</color>
     <color name="black_12">#1e000000</color>
+    <color name="silver">#e0e2e4</color>
+    <color name="blue_blue">#2a56c6</color>
+    <color name="rich_blue">#0015ff</color>
 </resources>
