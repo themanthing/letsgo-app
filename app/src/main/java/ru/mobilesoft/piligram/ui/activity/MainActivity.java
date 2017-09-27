@@ -1,13 +1,14 @@
 package ru.mobilesoft.piligram.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.view.MenuItem;
+import android.support.annotation.IdRes;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import ru.mobilesoft.piligram.R;
 import ru.mobilesoft.piligram.mvp.presenter.MainScreenPresenter;
 import ru.mobilesoft.piligram.mvp.view.MainScreenView;
@@ -23,44 +24,20 @@ public class MainActivity extends BaseActivity implements MainScreenView {
     MainScreenPresenter presenter;
 
     @BindView(R.id.navigation)
-    BottomNavigationView navigation;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener
-            mOnNavigationItemSelectedListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()) {
-                        case R.id.navigation_search:
-                            presenter.showSearchView();
-                            return true;
-                        case R.id.navigation_travels:
-                            presenter.showTravelsView();
-                            return true;
-                        case R.id.navigation_profile:
-                            presenter.showProfile();
-                            return true;
-                /*case R.id.navigation_favorite:
-                    presenter.showFavorite();
-                    return true;
-                case R.id.navigation_messages:
-                    presenter.showMyMessages();
-                    return true;*/
-                    }
-                    return false;
-                }
-
-            };
+    LinearLayout bottomNavigationLayout;
 
     @Override
     public void onBackPressed() {
         //TODO убрать строки в ресурсы
-        DialogFactory.showYesNoDialog(this, "Вы действительно хотите выйти?",
-                                      "Да", "Нет", (dialog, which) -> {
-                    dialog.dismiss();
-                    finish();
-                }, null);
+        DialogFactory.showYesNoDialog(this,
+                                      "Вы действительно хотите выйти?",
+                                      "Да",
+                                      "Нет",
+                                      (dialog, which) -> {
+                                          dialog.dismiss();
+                                          finish();
+                                      },
+                                      null);
     }
 
     @Override
@@ -71,11 +48,11 @@ public class MainActivity extends BaseActivity implements MainScreenView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     @Override
     public void showSearchForm() {
+        clearSelectNav(R.id.navigation_search);
         push(new SearchFragment(), false, false);
     }
 
@@ -92,5 +69,37 @@ public class MainActivity extends BaseActivity implements MainScreenView {
     @Override
     public void showMyTravels() {
         push(new MyTravelsFragment(), false, false);
+    }
+
+    private void clearSelectNav(@IdRes int id) {
+        for (int i = 0; i < bottomNavigationLayout.getChildCount(); i++) {
+            bottomNavigationLayout.getChildAt(i)
+                    .setSelected(bottomNavigationLayout.getChildAt(i).getId() == id);
+
+        }
+    }
+
+    @OnClick({
+            R.id.navigation_search,
+            R.id.navigation_profile,
+            R.id.navigation_travels,
+            R.id.navigation_favorite,
+            R.id.navigation_message
+    })
+    void onNavigationItemSelected(View item) {
+        clearSelectNav(item.getId());
+        switch (item.getId()) {
+            case R.id.navigation_search:
+                presenter.showSearchView();
+                return;
+            case R.id.navigation_profile:
+                presenter.showProfile();
+                return;
+            case R.id.navigation_travels:
+                presenter.showTravelsView();
+                return;
+
+        }
+
     }
 }
