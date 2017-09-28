@@ -1,5 +1,7 @@
 package ru.mobilesoft.piligram.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 /**
@@ -8,14 +10,19 @@ import java.util.Date;
 
 public class Vacation {
 
+    @SerializedName("beginDate")
     private Date beginDate;
 
+    @SerializedName("endDate")
     private Date endDate;
 
+    @SerializedName("daysCount")
     private int daysCount;
 
+    @SerializedName("type")
     private String type;
 
+    @SerializedName("direction")
     private String direction;
 
     public Date getBeginDate() {

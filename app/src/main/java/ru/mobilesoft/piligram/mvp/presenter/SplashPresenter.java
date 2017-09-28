@@ -24,6 +24,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
             // не хочется постоянно с ним бороться)
             addDisposable(getApi().refreshToken().subscribe(() -> {
                 // а тут мы проходим дальше
+                Timber.d("успещгл авторизовались");
                 getViewState().showWelcome();
             }, throwable -> {
                 // если все плохо то надо заново авторизоваться
@@ -53,8 +54,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
                 // нужно попробоать предложить задать отпуск
                 getViewState().showAddVacation();
             }else{
-
-
+                getViewState().showMainScreen();
             }
         });
 

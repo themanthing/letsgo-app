@@ -50,21 +50,26 @@ public class MyProfileVacationAdapter extends BaseListAdapter<Vacation, Recycler
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
         if (getItemViewType(position) == 0) {
             VacationViewHolder vHolder = (VacationViewHolder) holder;
-            Vacation item = getItem(position);
+            Vacation item = getItem(position-1);
             Context context = vHolder.itemView.getContext();
             //@formatter:off
             vHolder.dayCount.setText(
                     context.getString(R.string.from,
-                                      GrammarUtils.getDayCaseByNumber(context, item.getDaysCount())));
+                                      item.getType(),
+                                      GrammarUtils.getDayCaseByNumber(
+                                              context, item.getDaysCount())));
             //@formatter:on
 
             vHolder.place.setText(item.getDirection());
-
-            vHolder.date.setText(context.getString(R.string.item_profile_days,
-                                                   DateUtils.convertDateToMonthAndYear(item.getBeginDate()),
-                                                   DateUtils.convertDateToMonthAndYear(item.getEndDate())));
+            //@formatter:off
+            vHolder.date.setText(
+                    context.getString(R.string.item_profile_days,
+                                      DateUtils.convertDateToMonthAndYear(item.getBeginDate()),
+                                      DateUtils.convertDateToMonthAndYear(item.getEndDate())));
+            //@formatter:on
         }
     }
 

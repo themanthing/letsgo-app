@@ -97,7 +97,10 @@ public interface ServerApi {
     @GET("/api/people/all/{page}")
     Observable<List<People>> getPeopleList(@Path("page") int page);
 
-
+    /**
+     * создать отпуск
+     * @param request параметры отпуска
+     */
     @POST("/api/people/me/vacation")
     Completable addVacation(@Body Vacation request);
 

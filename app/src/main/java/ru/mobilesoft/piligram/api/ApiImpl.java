@@ -120,9 +120,7 @@ public class ApiImpl implements Api {
         request.setType((String) values.get(VACATION_DAYS_TYPE_VALUE));
         return http.addVacation(request)
                 .delay(300, TimeUnit.MILLISECONDS)
-                .doOnComplete(() -> {
-                    cache.getMe().addVacation(request);
-                })
+                .doOnComplete(() -> cache.getMe().addVacation(request))
                 .observeOn(AndroidSchedulers.mainThread());
     }
 

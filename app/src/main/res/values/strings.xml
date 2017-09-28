@@ -95,7 +95,14 @@
     <string name="action_edit">Изменить</string>
     <string name="profile_my_vavation">Мои отпуска</string>
     <string name="action_add_vacation">Добавить отпуск</string>
-    <string name="from">на %s</string>
+    <string name="from">%1$s %2$s</string>
     <string name="item_profile_days">%1$s - %2$s</string>
     <string name="action_save">Сохранить</string>
+    <string name="title_email">Email</string>
+    <string name="title_phone_number">Мобильный телефон</string>
+    <string name="title_name">Имя</string>
+    <string name="title_parent_name">Фамилия</string>
+    <string name="title_position">Род занятий</string>
+    <string name="title_organisation">Организация</string>
+    <string name="title_social">Социальные сети</string>
 </resources>
