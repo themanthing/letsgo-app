@@ -3,6 +3,7 @@ package ru.mobilesoft.piligram.ui.activity;
 import android.content.Intent;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -16,6 +17,8 @@ import ru.mobilesoft.piligram.utils.Constants;
 import su.ias.components.adapters.BaseFragmentPagerAdapter;
 import timber.log.Timber;
 
+import static ru.mobilesoft.piligram.utils.Constants.OPEN_AS_RESULT;
+
 /**
  * Created on 8/16/17.
  * это тоже простой мастер по созданию отпуска...
@@ -25,6 +28,11 @@ public class VacationWizard extends BaseWizardActivity implements VacationView {
 
     @InjectPresenter
     VacationPresenter presenter;
+
+    @ProvidePresenter
+    VacationPresenter provideVacationPresenter(){
+        return new VacationPresenter(getIntent().getBooleanExtra(OPEN_AS_RESULT, false));
+    }
 
     @Override
     public void showNextStep() {
@@ -52,6 +60,12 @@ public class VacationWizard extends BaseWizardActivity implements VacationView {
     @Override
     public void showMainScreen() {
         startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
+
+    @Override
+    public void returnSuccess() {
+        setResult(RESULT_OK);
         finish();
     }
 }

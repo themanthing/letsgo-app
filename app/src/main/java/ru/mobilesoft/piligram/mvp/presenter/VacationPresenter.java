@@ -13,14 +13,24 @@ import ru.mobilesoft.piligram.mvp.view.VacationView;
 @InjectViewState
 public class VacationPresenter extends BasePresenter<VacationView> {
 
+
+    private final boolean isResult;
+
+    public VacationPresenter(boolean isResult) {
+        this.isResult = isResult;
+    }
+
     // отправим данные на сервер)
     public void sendVacationData(HashMap<String, Object> values) {
 
         getViewState().showProgress();
         getApi().addVacation(values).subscribe(() -> {
             getViewState().hideProgress();
-            //TODO в дальнейшем этот кусок будет запускаться и через профиль надо будет разные выполнять действия!
-            getViewState().showMainScreen();
+            if(!isResult) {
+                getViewState().showMainScreen();
+            }else{
+                getViewState().returnSuccess();
+            }
         }, throwable -> {
             getViewState().hideProgress();
             getViewState().showError(throwable.getMessage());

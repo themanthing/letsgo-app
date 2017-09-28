@@ -1,5 +1,6 @@
 package ru.mobilesoft.piligram.ui.fragments.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,9 @@ import android.widget.ImageView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -24,8 +28,10 @@ import ru.mobilesoft.piligram.ui.activity.MyProfileEditActivity;
 import ru.mobilesoft.piligram.ui.activity.VacationWizard;
 import ru.mobilesoft.piligram.ui.adapters.MyProfileVacationAdapter;
 import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
+import ru.mobilesoft.piligram.utils.Constants;
 import ru.mobilesoft.piligram.utils.ImageUtils;
 
+import static ru.mobilesoft.piligram.utils.Constants.RESULT_TRAVEL_WIZARD;
 import static ru.mobilesoft.piligram.utils.Constants.SEX_MALE;
 
 /**
@@ -61,14 +67,19 @@ public class MyProfileFragment extends BaseFragment implements MyProfileView {
 
     @Override
     public void createVacationAdapter(List<Vacation> vacations) {
+
+        List<Vacation> data = new ArrayList<>();
+        data.addAll(vacations);
+        Arrays.sort(data.toArray());
+
         if (adapter == null) {
-            adapter = new MyProfileVacationAdapter(vacations, position -> {
+            adapter = new MyProfileVacationAdapter(data, position -> {
                 // TODO открыть окно информации по отпуску... хотя что там???
             }, v -> presenter.openAddVacationWizard());
             this.vacations.setAdapter(adapter);
         } else {
             adapter.clear();
-            adapter.addAll(vacations);
+            adapter.addAll(data);
         }
     }
 
@@ -102,12 +113,23 @@ public class MyProfileFragment extends BaseFragment implements MyProfileView {
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == RESULT_TRAVEL_WIZARD && resultCode == Activity.RESULT_OK){
+            presenter.updateTravels();
+        }else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    @Override
     public void vacationWizard() {
-        getActivity().startActivity(new Intent(getActivity(), VacationWizard.class));
+        Intent wizard = new Intent(getActivity(), VacationWizard.class);
+        wizard.putExtra(Constants.OPEN_AS_RESULT, true);
+        startActivityForResult(wizard, RESULT_TRAVEL_WIZARD);
     }
 
     @Override
     public void openEditProfile() {
-        getActivity().startActivity(new Intent(getActivity(), MyProfileEditActivity.class));
+        startActivityForResult(new Intent(getActivity(), MyProfileEditActivity.class), RESULT_TRAVEL_WIZARD);
     }
 }

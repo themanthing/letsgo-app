@@ -20,10 +20,10 @@ public class ProfilePresenter extends BasePresenter<MyProfileView> {
         People me = getApi().getUser();
         getViewState().showMyName(me.getName(), me.getParentName());
         getViewState().createVacationAdapter(me.getVacations());
-        if (TextUtils.isEmpty(me.getAvaterUrl())) {
+        if (TextUtils.isEmpty(me.getAvatarUrl())) {
             getViewState().showDefaultAvatar(me.getSex());
         } else {
-            getViewState().showAvatar(me.getAvaterUrl());
+            getViewState().showAvatar(me.getAvatarUrl());
         }
     }
 
@@ -33,5 +33,10 @@ public class ProfilePresenter extends BasePresenter<MyProfileView> {
 
     public void editProfile() {
         getViewState().openEditProfile();
+    }
+
+    public void updateTravels() {
+        People me = getApi().getUser();
+        getViewState().createVacationAdapter(me.getVacations());
     }
 }

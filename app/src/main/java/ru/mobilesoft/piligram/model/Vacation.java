@@ -1,5 +1,7 @@
 package ru.mobilesoft.piligram.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.Date;
  * Created on 10.09.17.
  */
 
-public class Vacation {
+public class Vacation implements Comparable {
 
     @SerializedName("beginDate")
     private Date beginDate;
@@ -63,5 +65,20 @@ public class Vacation {
 
     public void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object obj) {
+
+        Vacation tmp = (Vacation) obj;
+        if (this.beginDate.before(tmp.beginDate)) {
+      /* текущее меньше полученного */
+            return -1;
+        } else if (this.beginDate.after(tmp.beginDate)) {
+      /* текущее больше полученного */
+            return 1;
+        }
+    /* текущее равно полученному */
+        return 0;
     }
 }

@@ -30,7 +30,7 @@ public class People {
     private String sex;
 
     @SerializedName("avatar")
-    private String avaterUrl;
+    private String avatarUrl;
 
     private List<Vacation> vacations;
 
@@ -65,11 +65,11 @@ public class People {
         vacations.add(vacation);
     }
 
-    public String getAvaterUrl() {
-        return avaterUrl;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setAvaterUrl(String avaterUrl) {
-        this.avaterUrl = avaterUrl;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

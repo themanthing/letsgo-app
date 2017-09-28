@@ -24,6 +24,10 @@ public class Constants {
 
     public static final String SEX_MALE = "male";
 
+    public static final String OPEN_AS_RESULT = "open_as_result";
+
+    public static final int RESULT_TRAVEL_WIZARD = 100;
+
     public Constants() {
         throw new RuntimeException("don`t do that!");
     }
