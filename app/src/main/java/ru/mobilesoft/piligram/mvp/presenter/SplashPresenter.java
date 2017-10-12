@@ -51,7 +51,8 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         addDisposable(Observable.zip(getApi().getMe(),
                                      getApi().getTravelList(0),
                                      getApi().getMyTravels(),
-                                     (t1, t2, t3) -> t1)
+                                     getApi().getPeople(0),
+                                     (t1, t2, t3, t4) -> t1)
                               .subscribe(me -> {
                                   if (me.getVacations() == null || me.getVacations().isEmpty()) {
                                       // нужно попробоать предложить задать отпуск

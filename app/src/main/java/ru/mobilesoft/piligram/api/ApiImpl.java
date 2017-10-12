@@ -12,8 +12,8 @@ import io.reactivex.CompletableObserver;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import ru.mobilesoft.piligram.model.Travel;
-import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.Vacation;
+import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.response.People;
 import ru.mobilesoft.piligram.repositrory.cache.CacheRepository;
 import ru.mobilesoft.piligram.repositrory.http.RetrofitApi;
@@ -149,6 +149,14 @@ public class ApiImpl implements Api {
         return http.getMyTravels()
                 .delaySubscription(300, TimeUnit.MILLISECONDS)
                 .doOnNext(travels -> cache.addMyTravels(travels))
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Observable<List<People>> getPeople(int page) {
+        return http.getPeopleList(page)
+                .delaySubscription(300, TimeUnit.MILLISECONDS)
+                .doOnNext(peoples -> cache.addPeoples(peoples))
                 .observeOn(AndroidSchedulers.mainThread());
     }
 }

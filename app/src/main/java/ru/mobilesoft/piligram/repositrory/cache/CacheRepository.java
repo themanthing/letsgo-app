@@ -16,6 +16,7 @@ public class CacheRepository {
 
     private List<Travel> travels;
     private List<Travel> myTravels;
+    private List<People> peoples;
 
     public static CacheRepository getInstance() {
         if (instance == null) {
@@ -53,4 +54,16 @@ public class CacheRepository {
     public List<Travel> getMyTravels(){
         return myTravels;
     }
+
+    public void addPeoples(List<People> peoples) {
+        if (this.peoples == null){
+            this.peoples = new ArrayList<>();
+        }
+        this.peoples.addAll(peoples);
+    }
+
+    public List<People> getPeoples(){
+        return peoples;
+    }
+
 }

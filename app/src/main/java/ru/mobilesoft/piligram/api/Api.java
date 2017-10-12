@@ -94,4 +94,11 @@ public interface Api {
      * @return
      */
     Observable<List<Travel>> getMyTravels();
+
+    /**
+     * получить список пользователей
+     * @param page пейджинг
+     * @return массив пользователей
+     */
+    Observable<List<People>> getPeople(int page);
 }
