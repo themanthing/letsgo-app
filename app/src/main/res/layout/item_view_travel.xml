@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="10dp">
+
+    <FrameLayout
+        android:id="@+id/image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_travel"
+            android:layout_width="match_parent"
+            android:layout_height="246dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_travel_image"/>
+
+        <View
+            android:layout_gravity="bottom"
+            android:rotation="180"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_travel_image"/>
+
+        <TextView
+            android:id="@+id/tv_travel_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.04"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:maxLines="1"
+            tools:text="15 - 21 янв. 2018" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackground"
+        android:padding="8dp"
+        android:src="@drawable/heart"
+        android:tint="@color/white"
+        android:id="@+id/btn_favorite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="#ffffff"
+        android:letterSpacing="0.04"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginTop="4dp"
+        tools:text="12 800 руб./чел. На машине по Европе, есть 2 места"
+        android:layout_toStartOf="@+id/btn_favorite" />
+
+    <TextView
+        android:id="@+id/tv_travel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="normal"
+        android:textColor="#de000000"
+        android:letterSpacing="0.04"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/image_layout"
+        tools:text="Франция, Италия - экскурсии"
+        />
+
+    <LinearLayout
+        android:id="@+id/people_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_travel_name"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+</RelativeLayout>

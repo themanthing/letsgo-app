@@ -22,7 +22,7 @@ public class DateUtils {
         return DATE_FORMAT.format(date);
     }
 
-    public static String convertDateToMonthAndYear(Date date){
+    public static String convertDateToMonthAndYear(Date date) {
         return MONTH_NAME_AND_YEAR.format(date);
     }
 
@@ -38,6 +38,28 @@ public class DateUtils {
     public static long getDateDiffInMilliseconds(Date beginDate, Date endDate) {
         long diff = endDate.getTime() - beginDate.getTime();
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+    }
+
+    public static int getDiffYears(Date first, Date last) {
+        Calendar a = getCalendar(first);
+        Calendar b = getCalendar(last);
+        int diff = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
+        if (a.get(Calendar.MONTH) > b.get(Calendar.MONTH) || (a.get(Calendar.MONTH) == b.get(
+                Calendar.MONTH) && a.get(Calendar.DATE) > b.get(Calendar.DATE))) {
+            diff--;
+        }
+        return diff;
+    }
+
+    public static Calendar getCalendar(Date date) {
+        Calendar cal = Calendar.getInstance(Locale.US);
+        cal.setTime(date);
+        return cal;
+    }
+
+    public static String convertDate(String format, Date date){
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format, Locale.getDefault());
+        return dateFormat.format(date);
     }
 
 }

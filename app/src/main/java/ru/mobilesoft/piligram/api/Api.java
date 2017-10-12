@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import ru.mobilesoft.piligram.model.Travel;
 import ru.mobilesoft.piligram.model.response.People;
 
 /**
@@ -14,24 +15,28 @@ public interface Api {
 
     /**
      * проверит авторизовывались ли мы ранее
+     *
      * @return Ежели мы были авторизованны ранее то true
      */
     boolean isAuth();
 
     /**
      * получить токен для запросов к серверу
+     *
      * @return токен
      */
     String getToken();
 
     /**
      * получить refresh token для авторизации в слепую
+     *
      * @return токен
      */
     String getRefreshToken();
 
     /**
      * Авторизация по логину и паролю
+     *
      * @param userName логин
      * @param password пароль
      * @return вернет мои данные, или ошибку
@@ -40,6 +45,7 @@ public interface Api {
 
     /**
      * перегенерация токена auth_token при помощи refresh
+     *
      * @return вернет все ок, или ошибку
      */
     Completable refreshToken();
@@ -47,21 +53,31 @@ public interface Api {
     /**
      * получить данные по себе
      * TODO нужно сразу все данные получать, чего тянуть то
+     *
      * @return вернет все данные обо мне
      */
     Observable<People> getMe();
 
-
     /**
      * добавить отпуск
-     * @return
+     *
      * @param values
+     * @return
      */
     Completable addVacation(HashMap<String, Object> values);
 
     /**
      * получить мои данные из кеша
+     *
      * @return
      */
     People getUser();
+
+    /**
+     * создать путешествие
+     *
+     * @param travel
+     * @return
+     */
+    Completable createTravel(Travel travel);
 }

@@ -1,8 +1,11 @@
 package ru.mobilesoft.piligram.ui.activity;
 
+import com.arellomobile.mvp.presenter.InjectPresenter;
+
+import ru.mobilesoft.piligram.mvp.presenter.TravelPresenter;
+import ru.mobilesoft.piligram.mvp.view.TravelWizardView;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelCostFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelDateFragment;
-import ru.mobilesoft.piligram.ui.fragments.travels.TravelFinishFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelImagesFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelRoadFragment;
 import ru.mobilesoft.piligram.ui.fragments.travels.TravelTypeFragment;
@@ -14,7 +17,10 @@ import timber.log.Timber;
  * мастер создания путешествия
  */
 
-public class TravelWizard extends BaseWizardActivity {
+public class TravelWizard extends BaseWizardActivity implements TravelWizardView {
+
+    @InjectPresenter
+    TravelPresenter travelPresenter;
 
     @Override
     public void showNextStep() {
@@ -22,6 +28,7 @@ public class TravelWizard extends BaseWizardActivity {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         } else {
             Timber.d("заполнили все данные по путешествию");
+            travelPresenter.create();
         }
     }
 
@@ -34,7 +41,6 @@ public class TravelWizard extends BaseWizardActivity {
         adapter.addItem(new TravelRoadFragment());
         adapter.addItem(new TravelDateFragment());
         adapter.addItem(new TravelImagesFragment());
-        adapter.addItem(new TravelFinishFragment());
         return adapter;
     }
 }

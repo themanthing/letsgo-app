@@ -105,4 +105,10 @@
     <string name="title_position">Род занятий</string>
     <string name="title_organisation">Организация</string>
     <string name="title_social">Социальные сети</string>
+    <string name="people_years">, %d лет</string>
+    <string name="people_place_where">Куда: %s</string>
+    <string name="people_travel_date">Могу поехать: \\n%1$s - %2$s</string>
+    <string name="travel_finish_message">Добавьте всего несколько строк описания вашего путешествия - это поможет привлечь гораздо больше участников</string>
+    <string name="action_post">Опубликовать!</string>
+    <string name="travel_description_hint">Напишите здесь, где лучше купить билеты на поезд или самолет, укажите о необходимости визы или автомобильных прав. Расскажите про трансфер до места и про варианты размещения</string>
 </resources>

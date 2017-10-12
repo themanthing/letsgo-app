@@ -10,6 +10,7 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import ru.mobilesoft.piligram.model.Travel;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.Vacation;
 import ru.mobilesoft.piligram.model.response.People;
@@ -127,5 +128,10 @@ public class ApiImpl implements Api {
     @Override
     public People getUser() {
         return cache.getMe();
+    }
+
+    @Override
+    public Completable createTravel(Travel travel) {
+        return http.createTravel(travel);
     }
 }

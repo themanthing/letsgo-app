@@ -20,7 +20,7 @@ import ru.mobilesoft.piligram.R;
 public abstract class BaseListFragment extends BaseFragment {
 
     @BindView(R.id.rv_list)
-    RecyclerView list;
+    protected RecyclerView list;
 
     @BindView(R.id.page_title)
     TextView title;

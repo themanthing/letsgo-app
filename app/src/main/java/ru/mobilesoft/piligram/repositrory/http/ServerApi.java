@@ -12,6 +12,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import ru.mobilesoft.piligram.model.Travel;
 import ru.mobilesoft.piligram.model.request.AuthRequest;
 import ru.mobilesoft.piligram.model.request.CheckEmailRequest;
 import ru.mobilesoft.piligram.model.request.RegistrationRequest;
@@ -103,5 +104,12 @@ public interface ServerApi {
      */
     @POST("/api/people/me/vacation")
     Completable addVacation(@Body Vacation request);
+
+    /**
+     * вызов серверного АПИ по созданию путешествия
+     * @param travel параметры путешествия
+     */
+    @POST("/api/travels/")
+    Completable createTravel(@Body Travel travel);
 
 }
