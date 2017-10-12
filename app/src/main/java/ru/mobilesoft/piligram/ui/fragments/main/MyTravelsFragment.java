@@ -1,22 +1,29 @@
 package ru.mobilesoft.piligram.ui.fragments.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 
-import butterknife.OnClick;
+import butterknife.BindView;
 import ru.mobilesoft.piligram.R;
-import ru.mobilesoft.piligram.ui.activity.TravelWizard;
-import ru.mobilesoft.piligram.ui.fragments.BaseListFragment;
-import ru.mobilesoft.piligram.utils.Constants;
+import ru.mobilesoft.piligram.ui.fragments.BaseFragment;
+import ru.mobilesoft.piligram.ui.fragments.travels.OwnTravelsFragment;
+import ru.mobilesoft.piligram.ui.fragments.travels.ParticipateTravelsListFragment;
+import su.ias.components.adapters.BaseFragmentPagerAdapter;
 
 /**
  * Created on 8/8/17.
  */
 
-public class MyTravelsFragment extends BaseListFragment {
+public class MyTravelsFragment extends BaseFragment {
+
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
+
+    @BindView(R.id.travels)
+    ViewPager pager;
 
     @Override
     protected int getLayout() {
@@ -26,19 +33,13 @@ public class MyTravelsFragment extends BaseListFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setTitle(R.string.my_travels);
+
+        BaseFragmentPagerAdapter adapter = new BaseFragmentPagerAdapter(getChildFragmentManager());
+        adapter.addItem(new OwnTravelsFragment(), getString(R.string.own_travel));
+        adapter.addItem(new ParticipateTravelsListFragment(), getString(R.string.participate_travel));
+        pager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(pager);
+
     }
-
-    @Override
-    protected void setAdapter() {
-
-    }
-
-    @OnClick(R.id.bnt_add_travel)
-    void onAddTravelAction(){
-        getActivity().startActivityForResult(new Intent(getActivity(), TravelWizard.class),
-                                             Constants.RESULT_TRAVEL_WIZARD);
-    }
-
 
 }

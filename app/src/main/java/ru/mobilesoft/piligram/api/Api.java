@@ -1,6 +1,7 @@
 package ru.mobilesoft.piligram.api;
 
 import java.util.HashMap;
+import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
@@ -80,4 +81,17 @@ public interface Api {
      * @return
      */
     Completable createTravel(Travel travel);
+
+    /**
+     * Получить список поездок
+     * @param page страница
+     * @return вернет массив поездок
+     */
+    Observable<List<Travel>> getTravelList(int page);
+
+    /**
+     * список моих
+     * @return
+     */
+    Observable<List<Travel>> getMyTravels();
 }

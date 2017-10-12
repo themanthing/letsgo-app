@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Completable;
@@ -133,5 +134,21 @@ public class ApiImpl implements Api {
     @Override
     public Completable createTravel(Travel travel) {
         return http.createTravel(travel);
+    }
+
+    @Override
+    public Observable<List<Travel>> getTravelList(int page) {
+        return http.getTravels(page)
+                .delaySubscription(300, TimeUnit.MILLISECONDS)
+                .doOnNext(travels -> cache.addTravels(travels))
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Observable<List<Travel>> getMyTravels() {
+        return http.getMyTravels()
+                .delaySubscription(300, TimeUnit.MILLISECONDS)
+                .doOnNext(travels -> cache.addMyTravels(travels))
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

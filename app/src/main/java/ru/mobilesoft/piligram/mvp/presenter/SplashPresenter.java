@@ -2,8 +2,7 @@ package ru.mobilesoft.piligram.mvp.presenter;
 
 import com.arellomobile.mvp.InjectViewState;
 
-import retrofit2.HttpException;
-import retrofit2.Response;
+import io.reactivex.Observable;
 import ru.mobilesoft.piligram.mvp.view.SplashView;
 import timber.log.Timber;
 
@@ -48,21 +47,35 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
     public void checkUserData() {
 
-        getApi().getMe()
-                .subscribe(me -> {
-            if (me.getVacations() == null || me.getVacations().isEmpty()){
+        // TODO обработка ошибок!
+        addDisposable(Observable.zip(getApi().getMe(),
+                                     getApi().getTravelList(0),
+                                     getApi().getMyTravels(),
+                                     (t1, t2, t3) -> t1)
+                              .subscribe(me -> {
+                                  if (me.getVacations() == null || me.getVacations().isEmpty()) {
+                                      // нужно попробоать предложить задать отпуск
+                                      getViewState().showAddVacation();
+                                  } else {
+                                      getViewState().showMainScreen();
+                                  }
+                              }, Timber::e));
+/*
+        getApi().getMe().subscribe(me -> {
+            if (me.getVacations() == null || me.getVacations().isEmpty()) {
                 // нужно попробоать предложить задать отпуск
                 getViewState().showAddVacation();
-            }else{
+            } else {
                 getViewState().showMainScreen();
             }
-        });
+        });*/
 
     }
 
     /**
      * ну наконец-то доберемся до главного экрана
      */
+
     public void skipVacation() {
         getViewState().showMainScreen();
     }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/travels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textColor="#8a000000"
+            android:lineSpacingExtra="8sp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="100dp"
+            android:text="@string/own_travel_empty_message"
+            />
+
+        <TextView
+            android:id="@+id/btn_add_travel"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textColor="@color/blue_blue"
+            android:lineSpacingExtra="8sp"
+            android:layout_gravity="center"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="24dp"
+            android:gravity="center"
+            android:background="@drawable/bg_blue_button"
+            android:drawableStart="@drawable/ic_add_blue_24dp"
+            android:text="@string/action_add_travel"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -111,4 +111,10 @@
     <string name="travel_finish_message">Добавьте всего несколько строк описания вашего путешествия - это поможет привлечь гораздо больше участников</string>
     <string name="action_post">Опубликовать!</string>
     <string name="travel_description_hint">Напишите здесь, где лучше купить билеты на поезд или самолет, укажите о необходимости визы или автомобильных прав. Расскажите про трансфер до места и про варианты размещения</string>
+    <string name="own_travel">Организую</string>
+    <string name="participate_travel">Учавствую</string>
+    <string name="action_add_travel">Добавить путешествие</string>
+    <string name="own_travel_empty_message">Вы можете организовать свое собственное путешествие и оно появится в этом разделе</string>
+    <string name="action_go_to_search">Перейти в поиск путешествий</string>
+
 </resources>

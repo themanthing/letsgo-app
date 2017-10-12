@@ -81,14 +81,14 @@ public interface ServerApi {
      * @return вернет массив моих поездок
      */
     @GET("/api/travels/my")
-    Observable<List<TravelsResponse>> getMyTravels();
+    Observable<List<Travel>> getMyTravels();
 
     /**
      * получить список путешествий
      * @return вернет массив моих поездок
      */
-    @GET("/api/travels")
-    Observable<List<TravelsResponse>> getTravels();
+    @GET("/api/travels/{page}")
+    Observable<List<Travel>> getTravels(@Path("page") int page);
 
     /**
      * получить список пользователей, по странично
