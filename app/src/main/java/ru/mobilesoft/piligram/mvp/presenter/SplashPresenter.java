@@ -61,16 +61,6 @@ public class SplashPresenter extends BasePresenter<SplashView> {
                                       getViewState().showMainScreen();
                                   }
                               }, Timber::e));
-/*
-        getApi().getMe().subscribe(me -> {
-            if (me.getVacations() == null || me.getVacations().isEmpty()) {
-                // нужно попробоать предложить задать отпуск
-                getViewState().showAddVacation();
-            } else {
-                getViewState().showMainScreen();
-            }
-        });*/
-
     }
 
     /**

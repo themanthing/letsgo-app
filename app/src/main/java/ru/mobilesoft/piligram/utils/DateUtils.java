@@ -18,6 +18,12 @@ public class DateUtils {
     private static final SimpleDateFormat MONTH_NAME_AND_YEAR =
             new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
 
+    private static final SimpleDateFormat TRAVEL_DATE =
+            new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+
+    private static final SimpleDateFormat MONTH_SMALL =
+            new SimpleDateFormat("MMM", Locale.getDefault());
+
     public static String convertDateToString(Date date) {
         return DATE_FORMAT.format(date);
     }
@@ -62,4 +68,18 @@ public class DateUtils {
         return dateFormat.format(date);
     }
 
+    public static String getTravelDates(Date beginDate, Date endDate){
+        Calendar begin = getCalendar(beginDate);
+
+        int day = begin.get(Calendar.DAY_OF_MONTH);
+        int beginMonth = begin.get(Calendar.MONTH);
+
+        Calendar end =getCalendar(endDate);
+
+        if (end.get(Calendar.MONTH) != beginMonth){
+            return day + " " + MONTH_SMALL.format(beginDate) + " - " + TRAVEL_DATE.format(beginDate);
+        }else {
+            return day + " - " + TRAVEL_DATE.format(beginDate);
+        }
+    }
 }

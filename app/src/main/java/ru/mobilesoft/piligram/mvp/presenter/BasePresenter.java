@@ -14,7 +14,7 @@ import ru.mobilesoft.piligram.api.ApiImpl;
  * Created on 8/7/17.
  */
 
-abstract class BasePresenter<V extends MvpView> extends MvpPresenter<V> {
+public abstract class BasePresenter<V extends MvpView> extends MvpPresenter<V> {
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 

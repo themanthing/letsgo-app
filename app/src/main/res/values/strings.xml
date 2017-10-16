@@ -116,5 +116,6 @@
     <string name="action_add_travel">Добавить путешествие</string>
     <string name="own_travel_empty_message">Вы можете организовать свое собственное путешествие и оно появится в этом разделе</string>
     <string name="action_go_to_search">Перейти в поиск путешествий</string>
+    <string name="travel_list_empty_message">К сожалению, мы еще не нашли для вас подходящих путешествий и компаний. Мы делаем все, чтобы исправить это.</string>
 
 </resources>

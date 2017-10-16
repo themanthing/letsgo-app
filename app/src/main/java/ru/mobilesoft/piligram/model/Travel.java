@@ -1,8 +1,11 @@
 package ru.mobilesoft.piligram.model;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created on 9/29/17.
@@ -24,6 +27,12 @@ public class Travel {
 
     @SerializedName("title")
     private String title;
+
+    @SerializedName("price")
+    private Double pricePerPeople;
+
+    @SerializedName("images")
+    private List<String> images;
 
     public Date getBeginDate() {
         return beginDate;
@@ -50,6 +59,10 @@ public class Travel {
     }
 
     public String getImage() {
+
+        if (TextUtils.isEmpty(image) && images != null && images.size() > 0){
+            return images.get(0);
+        }
         return image;
     }
 
@@ -63,5 +76,16 @@ public class Travel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Double getPrice() {
+        if (pricePerPeople == null){
+            return 0d;
+        }
+        return pricePerPeople;
+    }
+
+    public void setPrice(double pricePerPeople) {
+        this.pricePerPeople = pricePerPeople;
     }
 }
